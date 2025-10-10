@@ -1,0 +1,186 @@
+{
+  "id": "transitions",
+  "name": "Transitions: The Five-Second Window",
+  "chapter": 5,
+  "section": "Transitions: The Five-Second Window",
+  "description": "Shows positive transition (winning ball → quick goal) and negative transition response (counter-press or tactical foul)",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "DEF1",
+      "x": 450,
+      "y": 280,
+      "color": "#60a5fa",
+      "label": "DEF"
+    },
+    {
+      "id": "ATT1",
+      "x": 470,
+      "y": 280,
+      "color": "#f87171",
+      "label": "ATT"
+    },
+    {
+      "id": "ATT2",
+      "x": 420,
+      "y": 180,
+      "color": "#f87171",
+      "label": "ATT"
+    },
+    {
+      "id": "ATT3",
+      "x": 580,
+      "y": 220,
+      "color": "#f87171",
+      "label": "ATT"
+    },
+    {
+      "id": "DEF2",
+      "x": 650,
+      "y": 250,
+      "color": "#60a5fa",
+      "label": "DEF"
+    },
+    {
+      "id": "DEF3",
+      "x": 680,
+      "y": 325,
+      "color": "#60a5fa",
+      "label": "DEF"
+    },
+    {
+      "id": "ATT4",
+      "x": 720,
+      "y": 325,
+      "color": "#f87171",
+      "label": "ATT"
+    },
+    {
+      "id": "BALL",
+      "x": 470,
+      "y": 280,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 470, "y": 280},
+      "to": {"x": 450, "y": 280},
+      "start": 0,
+      "end": 200,
+      "easing": "linear"
+    },
+    {
+      "type": "spotlight",
+      "id": "DEF1",
+      "radius": 35,
+      "start": 0,
+      "end": 600
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 450, "y": 280},
+      "to": {"x": 580, "y": 220},
+      "start": 400,
+      "end": 800
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 450, "y": 280},
+      "to": {"x": 580, "y": 220},
+      "start": 400,
+      "end": 800,
+      "easing": "linear"
+    },
+    {
+      "type": "move",
+      "id": "ATT3",
+      "from": {"x": 580, "y": 220},
+      "to": {"x": 680, "y": 240},
+      "start": 800,
+      "end": 1200,
+      "easing": "quadOut"
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 580, "y": 220},
+      "to": {"x": 680, "y": 240},
+      "start": 800,
+      "end": 1200,
+      "easing": "linear"
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 680, "y": 240},
+      "to": {"x": 750, "y": 320},
+      "start": 1200,
+      "end": 1600
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 680, "y": 240},
+      "to": {"x": 750, "y": 320},
+      "start": 1200,
+      "end": 1600,
+      "easing": "linear"
+    },
+    {
+      "type": "move",
+      "id": "ATT4",
+      "from": {"x": 720, "y": 325},
+      "to": {"x": 750, "y": 320},
+      "start": 1000,
+      "end": 1500,
+      "easing": "quadOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "ATT4",
+      "radius": 35,
+      "start": 1600,
+      "end": 2200
+    },
+    {
+      "type": "move",
+      "id": "DEF2",
+      "from": {"x": 650, "y": 250},
+      "to": {"x": 700, "y": 280},
+      "start": 800,
+      "end": 1800,
+      "easing": "quadOut"
+    },
+    {
+      "type": "move",
+      "id": "DEF3",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 720, "y": 340},
+      "start": 1000,
+      "end": 1800,
+      "easing": "quadOut"
+    }
+  ],
+  "annotations": [
+    {
+      "text": "POSITIVE TRANSITION: Ball won → 3 passes → goal in 5 seconds",
+      "x": 500,
+      "y": 70,
+      "anchor": "middle"
+    },
+    {
+      "text": "Defense disorganized, no time to recover shape",
+      "x": 750,
+      "y": 400,
+      "anchor": "end"
+    }
+  ]
+}

@@ -4,54 +4,47 @@ import { useSearchParams } from 'next/navigation'
 import { useState, Suspense } from 'react'
 
 const scenarios = {
-  'accordionShape': {
+  'accordion': {
     title: 'Accordion Animation',
     subtitle: 'Shape Breathing',
     chapter: 'Chapter 2: Shapes and Setups',
-    description: 'Watch how a team shape transforms from compact defensive to spread attacking, then compresses back on turnover.',
-    explanation: 'This animation demonstrates the "breathing" concept—how teams expand to create passing lanes when they have the ball, then compress to deny space when defending. Same 11 players, two different shapes.'
+    description: 'Watch how a 4-2-3-1 formation expands in possession and compresses out of possession.',
+    explanation: 'This animation demonstrates the "breathing" concept—how teams expand to create passing lanes when they have the ball, then compress to deny space when defending.'
   },
-  'caughtOffside': {
-    title: 'Caught by the Trap',
-    subtitle: 'Offside',
+  'offside-basics': {
+    title: 'Offside Basics',
+    subtitle: 'The Fundamental Rule',
     chapter: 'Chapter 4: Offside',
-    description: 'Striker runs too early and is caught offside when the ball is played.',
-    explanation: 'The attacker runs too early and is ahead of the defensive line when the pass is made. Poor timing results in an offside call—the trap works.'
+    description: 'Learn the fundamental offside rule through visual demonstration.',
+    explanation: 'The attacker must have at least two defenders (usually including the goalkeeper) between them and the goal line when the ball is played forward.'
   },
-  'onsideBeatsTrap': {
-    title: 'Beats the Trap',
-    subtitle: 'Perfect Timing',
-    chapter: 'Chapter 4: Offside',
-    description: 'Attacker times run perfectly to stay onside as the defensive line steps up.',
-    explanation: 'The striker holds position while the defense steps up, then times the run perfectly to be level with defenders when the ball is played. Perfect timing beats the offside trap.'
-  },
-  'timedRun': {
-    title: 'Timed Run',
-    subtitle: 'Beating Offside',
-    chapter: 'Chapter 4: Offside',
-    description: 'Striker times their run perfectly—hesitates while defender commits, then explodes forward.',
-    explanation: 'Timing is everything. The striker hesitates as the defender pushes up, then makes an explosive run at the moment of the pass. Run too early and you\'re offside.'
-  },
-  'invertedWinger': {
-    title: 'Inverted Winger',
+  'inverted-winger': {
+    title: 'Inverted Winger Movement',
     subtitle: 'Cutting Inside',
     chapter: 'Chapter 3: Who Does What',
-    description: 'Right-footed player on left wing cuts inside onto stronger foot to create shooting angle.',
-    explanation: 'An inverted winger plays on the opposite flank from their strong foot (right-footed on left wing). This allows them to cut inside and shoot or pass with their preferred foot, creating dangerous angles.'
+    description: 'See how inverted wingers cut inside to shoot or create.',
+    explanation: 'An inverted winger plays on the opposite flank from their strong foot, allowing them to cut inside and shoot or pass with their preferred foot.'
   },
-  'overloadCutback': {
-    title: 'Overload to Cutback Goal',
-    subtitle: 'Most Common Goal Pattern',
+  'building-from-back': {
+    title: 'Building from the Back',
+    subtitle: 'Patient Possession',
     chapter: 'Chapter 2: Shapes and Setups',
-    description: 'Team overloads left side, switches to isolated right, delivers cutback cross for easy goal.',
-    explanation: 'The most common goal pattern in modern soccer: overload one side to draw defenders, switch play to the weak side, then deliver a low cutback cross to an unmarked runner. The defense gets pulled out of position and can\'t recover in time.'
+    description: 'How teams construct attacks starting from the goalkeeper.',
+    explanation: 'Modern teams build possession from the back, with center-backs splitting wide and midfielders dropping to receive the ball.'
   },
-  'transitions': {
-    title: 'Transitions',
-    subtitle: 'The Five-Second Window',
-    chapter: 'Chapter 5: Reading a Match',
-    description: 'Team wins ball and has 5-second window to exploit disorganized defense.',
-    explanation: 'When possession changes, there\'s a brief window where the defense is disorganized. Quick teams exploit this with rapid passes forward before the opposition can recover their shape. Window closes fast—defenders recover in about 5 seconds.'
+  'false-nine': {
+    title: 'False 9 Movement',
+    subtitle: 'The Dropping Striker',
+    chapter: 'Chapter 3: Who Does What',
+    description: 'How a false 9 drops deep to create space and confusion.',
+    explanation: 'Instead of staying high like a traditional striker, a false 9 drops into midfield, pulling center-backs out of position and creating space for wingers to attack.'
+  },
+  'coordinated-press': {
+    title: 'Coordinated Press',
+    subtitle: 'Team Defending',
+    chapter: 'Chapter 3: Who Does What',
+    description: 'How teams press together to win the ball high up the pitch.',
+    explanation: 'Effective pressing requires coordination—as one player pressures the ball, teammates cut off passing lanes and compress space.'
   }
 }
 
@@ -62,7 +55,7 @@ function TacticsContent() {
   const [selectedScenario, setSelectedScenario] = useState(
     scenarioParam && scenarios[scenarioParam as keyof typeof scenarios] 
       ? scenarioParam 
-      : 'accordionShape'
+      : 'accordion'
   )
 
   const currentScenario = scenarios[selectedScenario as keyof typeof scenarios]
@@ -113,14 +106,28 @@ function TacticsContent() {
               <p className="mt-1 text-xs text-soccer-green-200">{currentScenario.chapter}</p>
             </div>
             
-            {/* Embedded Interactive Tool */}
-            <div className="h-[600px] w-full bg-gray-900">
-              <iframe 
-                src={`/tactics/index.html?id=${selectedScenario}`}
-                className="h-full w-full border-0"
-                title="Interactive Soccer Tactics Tool"
-                key={selectedScenario}
-              />
+            {/* Placeholder for actual animation tool */}
+            <div className="flex min-h-[500px] items-center justify-center bg-gradient-to-br from-soccer-green-50 to-white p-8 dark:from-gray-900 dark:to-gray-950">
+              <div className="text-center">
+                <div className="mb-6 text-8xl">⚽</div>
+                <p className="mb-2 text-xl font-semibold text-gray-700 dark:text-gray-300">
+                  Your Interactive Tool Goes Here
+                </p>
+                <p className="mb-6 text-gray-600 dark:text-gray-400">
+                  This is where your tactical animation component will be embedded
+                </p>
+                <div className="flex justify-center gap-4">
+                  <button className="rounded-lg bg-soccer-green-600 px-6 py-2 font-semibold text-white transition hover:bg-soccer-green-700">
+                    Play
+                  </button>
+                  <button className="rounded-lg bg-gray-200 px-6 py-2 font-semibold text-gray-700 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300">
+                    Pause
+                  </button>
+                  <button className="rounded-lg bg-gray-200 px-6 py-2 font-semibold text-gray-700 transition hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300">
+                    Reset
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 

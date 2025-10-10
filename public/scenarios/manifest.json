@@ -1,0 +1,58 @@
+[
+  {
+    "id": "accordionShape",
+    "name": "Accordion Animation (Shape Breathing)",
+    "file": "accordionShape.json",
+    "group": "Shapes and Tactics",
+    "chapter": 2,
+    "section": "Two Pictures, One Team"
+  },
+  {
+    "id": "onsideBeatsTrap",
+    "name": "Beats the Trap (Onside)",
+    "file": "onsideBeatsTrap.json",
+    "group": "Offside Mechanics",
+    "chapter": 4,
+    "section": "The Offside Trap"
+  },
+  {
+    "id": "caughtOffside",
+    "name": "Caught by the Trap (Offside)",
+    "file": "caughtOffside.json",
+    "group": "Offside Mechanics",
+    "chapter": 4,
+    "section": "The Offside Trap"
+  },
+  {
+    "id": "timedRun",
+    "name": "Timed Run (Beating Offside)",
+    "file": "timedRun.json",
+    "group": "Offside Mechanics",
+    "chapter": 4,
+    "section": "Timing the Run"
+  },
+  {
+    "id": "overloadCutback",
+    "name": "Overload to Isolate → Cutback Goal",
+    "file": "overloadCutback.json",
+    "group": "Shapes and Tactics",
+    "chapter": 2,
+    "section": "How Teams Build From the Back"
+  },
+  {
+    "id": "transitions",
+    "name": "Transitions: The Five-Second Window",
+    "file": "transitions.json",
+    "group": "Reading the Game",
+    "chapter": 5,
+    "section": "Transitions"
+  },
+  {
+    "id": "invertedWinger",
+    "name": "Inverted Winger",
+    "file": "invertedWinger.json",
+    "group": "Player Roles",
+    "chapter": 3,
+    "section": "Wingers"
+  }
+]

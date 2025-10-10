@@ -1,0 +1,156 @@
+{
+  "id": "invertedWinger",
+  "name": "Inverted Winger",
+  "chapter": 3,
+  "section": "Wingers",
+  "description": "Right-footed player on left wing cuts inside onto stronger foot to create shooting angle",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "LW",
+      "x": 200,
+      "y": 180,
+      "color": "#f87171",
+      "label": "11"
+    },
+    {
+      "id": "RB",
+      "x": 250,
+      "y": 180,
+      "color": "#60a5fa",
+      "label": "2"
+    },
+    {
+      "id": "CB",
+      "x": 350,
+      "y": 280,
+      "color": "#60a5fa",
+      "label": "5"
+    },
+    {
+      "id": "BALL",
+      "x": 200,
+      "y": 180,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "textLabel",
+      "text": "PHASE 1: Right-footed winger on LEFT side",
+      "x": 200,
+      "y": 90,
+      "anchor": "start",
+      "start": 0,
+      "end": 1000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 210, "y": 190},
+      "to": {"x": 270, "y": 220},
+      "color": "#f87171",
+      "start": 0,
+      "end": 800
+    },
+    {
+      "type": "move",
+      "id": "LW",
+      "from": {"x": 200, "y": 180},
+      "to": {"x": 280, "y": 230},
+      "start": 0,
+      "end": 800,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 200, "y": 180},
+      "to": {"x": 280, "y": 230},
+      "start": 0,
+      "end": 800,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "RB",
+      "from": {"x": 250, "y": 180},
+      "to": {"x": 260, "y": 200},
+      "start": 200,
+      "end": 900,
+      "easing": "quadOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "LW",
+      "radius": 28,
+      "start": 800,
+      "end": 1400
+    },
+    {
+      "type": "textLabel",
+      "text": "PHASE 2: Cuts inside onto stronger RIGHT foot",
+      "x": 340,
+      "y": 220,
+      "anchor": "start",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 290, "y": 240},
+      "to": {"x": 410, "y": 295},
+      "color": "#ffeb3b",
+      "start": 800,
+      "end": 1600
+    },
+    {
+      "type": "move",
+      "id": "LW",
+      "from": {"x": 280, "y": 230},
+      "to": {"x": 420, "y": 300},
+      "start": 800,
+      "end": 1600,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 280, "y": 230},
+      "to": {"x": 420, "y": 300},
+      "start": 800,
+      "end": 1600,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "CB",
+      "from": {"x": 350, "y": 280},
+      "to": {"x": 380, "y": 290},
+      "start": 900,
+      "end": 1600,
+      "easing": "quadOut"
+    },
+    {
+      "type": "textLabel",
+      "text": "RESULT: Shooting angle created",
+      "x": 450,
+      "y": 350,
+      "anchor": "start",
+      "start": 1600,
+      "end": 2500
+    }
+  ],
+  "annotations": [
+    {
+      "text": "Inverted = opposite foot from wing side (right foot on left)",
+      "x": 500,
+      "y": 40,
+      "anchor": "middle"
+    }
+  ]
+}

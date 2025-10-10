@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Label Position Checker</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .controls {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    select {
+      padding: 8px 12px;
+      font-size: 16px;
+      background: #3a3a3a;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 4px;
+      cursor: pointer;
+      min-width: 300px;
+    }
+    .legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+    #canvas-container {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    #pitch {
+      background: #1a472a;
+      border: 2px solid #fff;
+    }
+    .warning-box {
+      background: #4a2a1a;
+      border: 2px solid #ff6b6b;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .warning-box h3 {
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+    .warning-item {
+      padding: 5px 0;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .warning-item:last-child {
+      border-bottom: none;
+    }
+    .info-box {
+      background: #2a3a4a;
+      border: 2px solid #4a9eff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .info-box h3 {
+      color: #4a9eff;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚽ Label Position Checker</h1>
+    
+    <div class="controls">
+      <select id="scenario-select">
+        <option value="">Select a scenario...</option>
+      </select>
+      
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #60a5fa;"></div>
+          <span>Players</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #fbbf24;"></div>
+          <span>Timed Labels (all shown at once)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #34d399;"></div>
+          <span>Persistent Annotations</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #f87171;"></div>
+          <span>⚠️ Edge Warning (too close to border)</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="canvas-container">
+      <svg id="pitch" width="1000" height="650" viewBox="0 0 1000 650"></svg>
+    </div>
+
+    <div id="warnings"></div>
+    <div id="info"></div>
+  </div>
+
+  <script>
+    const scenarios = [
+      {
+        id: 'overloadCutback',
+        name: 'Overload to Isolate → Cutback Goal',
+        file: 'overloadCutback.json'
+      },
+      {
+        id: 'accordionShape',
+        name: 'Accordion Animation (Enhanced)',
+        file: 'accordionShape.json'
+      },
+      {
+        id: 'transitions',
+        name: 'Transitions: Five-Second Window (Enhanced)',
+        file: 'transitions.json'
+      },
+      {
+        id: 'invertedWinger',
+        name: 'Inverted Winger',
+        file: 'invertedWinger.json'
+      },
+      {
+        id: 'timedRun',
+        name: 'Timed Run (Beating Offside)',
+        file: 'timedRun.json'
+      },
+      {
+        id: 'onsideBeatsTrap',
+        name: 'Beats the Trap (Onside)',
+        file: 'onsideBeatsTrap.json'
+      },
+      {
+        id: 'caughtOffside',
+        name: 'Caught by the Trap (Offside)',
+        file: 'caughtOffside.json'
+      }
+    ];
+
+    // Embedded scenario data for the enhanced ones we just created
+    const embeddedScenarios = {
+      accordionShape: {"id":"accordionShape","name":"Accordion Animation (Shape Breathing)","chapter":2,"section":"Two Pictures, One Team","description":"Team shape transforms from compact 4-5-1 defensive to spread 2-3-5 attacking, then compresses back on turnover","pitch":{"width":1000,"height":650},"players":[{"id":"LB","x":280,"y":120,"color":"#60a5fa","label":"3"},{"id":"CB1","x":280,"y":260,"color":"#60a5fa","label":"4"},{"id":"CB2","x":280,"y":390,"color":"#60a5fa","label":"5"},{"id":"RB","x":280,"y":530,"color":"#60a5fa","label":"2"},{"id":"DM","x":350,"y":325,"color":"#60a5fa","label":"6"},{"id":"LM","x":420,"y":180,"color":"#60a5fa","label":"8"},{"id":"CM","x":420,"y":325,"color":"#60a5fa","label":"10"},{"id":"RM","x":420,"y":470,"color":"#60a5fa","label":"7"},{"id":"LW","x":490,"y":230,"color":"#60a5fa","label":"11"},{"id":"RW","x":490,"y":420,"color":"#60a5fa","label":"9"},{"id":"ST","x":560,"y":325,"color":"#60a5fa","label":"10"},{"id":"BALL","x":280,"y":260,"color":"#fff","r":8,"label":""}],"actions":[{"type":"textLabel","text":"COMPACT: 4-5-1 defensive shape","x":360,"y":90,"anchor":"middle","start":0,"end":1000},{"type":"move","id":"BALL","from":{"x":280,"y":260},"to":{"x":350,"y":325},"start":0,"end":400,"easing":"linear"},{"type":"textLabel","text":"EXPANSION: Fullbacks push high, 6 drops","x":400,"y":90,"anchor":"middle","start":500,"end":2200},{"type":"arrow","from":{"x":280,"y":120},"to":{"x":420,"y":80},"color":"#60a5fa","start":500,"end":2000},{"type":"arrow","from":{"x":280,"y":530},"to":{"x":420,"y":570},"color":"#60a5fa","start":500,"end":2000},{"type":"arrow","from":{"x":350,"y":325},"to":{"x":320,"y":325},"color":"#60a5fa","start":500,"end":2000},{"type":"move","id":"LB","from":{"x":280,"y":120},"to":{"x":450,"y":80},"start":500,"end":2000,"easing":"quadOut"},{"type":"move","id":"RB","from":{"x":280,"y":530},"to":{"x":450,"y":570},"start":500,"end":2000,"easing":"quadOut"},{"type":"move","id":"DM","from":{"x":350,"y":325},"to":{"x":320,"y":325},"start":500,"end":2000,"easing":"quadOut"},{"type":"move","id":"CB1","from":{"x":280,"y":260},"to":{"x":320,"y":240},"start":500,"end":2000,"easing":"quadOut"},{"type":"move","id":"CB2","from":{"x":280,"y":390},"to":{"x":320,"y":410},"start":500,"end":2000,"easing":"quadOut"},{"type":"arrow","from":{"x":420,"y":180},"to":{"x":500,"y":140},"color":"#60a5fa","start":800,"end":2200},{"type":"arrow","from":{"x":420,"y":470},"to":{"x":500,"y":510},"color":"#60a5fa","start":800,"end":2200},{"type":"move","id":"LM","from":{"x":420,"y":180},"to":{"x":520,"y":140},"start":800,"end":2200,"easing":"quadOut"},{"type":"move","id":"CM","from":{"x":420,"y":325},"to":{"x":520,"y":325},"start":800,"end":2200,"easing":"quadOut"},{"type":"move","id":"RM","from":{"x":420,"y":470},"to":{"x":520,"y":510},"start":800,"end":2200,"easing":"quadOut"},{"type":"textLabel","text":"EXPANDED: 2-3-5 attacking shape","x":500,"y":600,"anchor":"middle","start":1200,"end":2800},{"type":"arrow","from":{"x":490,"y":230},"to":{"x":630,"y":180},"color":"#60a5fa","start":1200,"end":2500},{"type":"arrow","from":{"x":490,"y":420},"to":{"x":630,"y":470},"color":"#60a5fa","start":1200,"end":2500},{"type":"arrow","from":{"x":560,"y":325},"to":{"x":700,"y":325},"color":"#60a5fa","start":1200,"end":2500},{"type":"move","id":"LW","from":{"x":490,"y":230},"to":{"x":650,"y":180},"start":1200,"end":2500,"easing":"quadOut"},{"type":"move","id":"RW","from":{"x":490,"y":420},"to":{"x":650,"y":470},"start":1200,"end":2500,"easing":"quadOut"},{"type":"move","id":"ST","from":{"x":560,"y":325},"to":{"x":720,"y":325},"start":1200,"end":2500,"easing":"quadOut"},{"type":"move","id":"BALL","from":{"x":350,"y":325},"to":{"x":720,"y":325},"start":2500,"end":3200,"easing":"linear"},{"type":"passArc","from":{"x":350,"y":325},"to":{"x":720,"y":325},"start":2500,"end":3200},{"type":"textLabel","text":"TURNOVER: Ball lost","x":650,"y":280,"anchor":"middle","start":3500,"end":4200},{"type":"move","id":"BALL","from":{"x":720,"y":325},"to":{"x":580,"y":325},"start":3800,"end":4200,"easing":"linear"},{"type":"textLabel","text":"COMPRESSION: Everyone sprints back","x":400,"y":600,"anchor":"middle","start":4000,"end":5600},{"type":"arrow","from":{"x":450,"y":80},"to":{"x":310,"y":120},"color":"#f87171","start":4000,"end":5200},{"type":"arrow","from":{"x":450,"y":570},"to":{"x":310,"y":530},"color":"#f87171","start":4000,"end":5200},{"type":"arrow","from":{"x":650,"y":180},"to":{"x":520,"y":230},"color":"#f87171","start":4400,"end":5600},{"type":"arrow","from":{"x":650,"y":470},"to":{"x":520,"y":420},"color":"#f87171","start":4400,"end":5600},{"type":"arrow","from":{"x":720,"y":325},"to":{"x":590,"y":325},"color":"#f87171","start":4400,"end":5600},{"type":"move","id":"LB","from":{"x":450,"y":80},"to":{"x":280,"y":120},"start":4000,"end":5200,"easing":"quadInOut"},{"type":"move","id":"RB","from":{"x":450,"y":570},"to":{"x":280,"y":530},"start":4000,"end":5200,"easing":"quadInOut"},{"type":"move","id":"DM","from":{"x":320,"y":325},"to":{"x":350,"y":325},"start":4000,"end":5200,"easing":"quadInOut"},{"type":"move","id":"CB1","from":{"x":320,"y":240},"to":{"x":280,"y":260},"start":4000,"end":5200,"easing":"quadInOut"},{"type":"move","id":"CB2","from":{"x":320,"y":410},"to":{"x":280,"y":390},"start":4000,"end":5200,"easing":"quadInOut"},{"type":"move","id":"LM","from":{"x":520,"y":140},"to":{"x":420,"y":180},"start":4200,"end":5400,"easing":"quadInOut"},{"type":"move","id":"CM","from":{"x":520,"y":325},"to":{"x":420,"y":325},"start":4200,"end":5400,"easing":"quadInOut"},{"type":"move","id":"RM","from":{"x":520,"y":510},"to":{"x":420,"y":470},"start":4200,"end":5400,"easing":"quadInOut"},{"type":"move","id":"LW","from":{"x":650,"y":180},"to":{"x":490,"y":230},"start":4400,"end":5600,"easing":"quadInOut"},{"type":"move","id":"RW","from":{"x":650,"y":470},"to":{"x":490,"y":420},"start":4400,"end":5600,"easing":"quadInOut"},{"type":"move","id":"ST","from":{"x":720,"y":325},"to":{"x":560,"y":325},"start":4400,"end":5600,"easing":"quadInOut"}],"annotations":[{"text":"The 'Accordion' - same 11 players, two different shapes","x":500,"y":40,"anchor":"middle"}]},
+      transitions: {"id":"transitions","name":"Transitions: Five-Second Window","chapter":5,"section":"Transitions","description":"Team wins ball and has 5-second window to exploit disorganized defense before they can recover shape","pitch":{"width":1000,"height":650},"players":[{"id":"DM","x":350,"y":325,"color":"#60a5fa","label":"6"},{"id":"LW","x":420,"y":180,"color":"#60a5fa","label":"11"},{"id":"RW","x":420,"y":470,"color":"#60a5fa","label":"7"},{"id":"ST","x":520,"y":325,"color":"#60a5fa","label":"9"},{"id":"D1","x":680,"y":200,"color":"#f87171","label":""},{"id":"D2","x":700,"y":280,"color":"#f87171","label":""},{"id":"D3","x":680,"y":360,"color":"#f87171","label":""},{"id":"D4","x":660,"y":450,"color":"#f87171","label":""},{"id":"BALL","x":350,"y":325,"color":"#fff","r":8,"label":""}],"actions":[{"type":"textLabel","text":"TURNOVER: Blue team wins ball","x":350,"y":90,"anchor":"middle","start":0,"end":1000},{"type":"spotlight","id":"DM","radius":32,"start":0,"end":800},{"type":"textLabel","text":"5-SECOND WINDOW: Red defense out of position","x":500,"y":90,"anchor":"middle","start":800,"end":2200},{"type":"arrow","from":{"x":370,"y":325},"to":{"x":490,"y":325},"color":"#ffeb3b","start":800,"end":1500},{"type":"passArc","from":{"x":350,"y":325},"to":{"x":520,"y":325},"start":800,"end":1400},{"type":"move","id":"BALL","from":{"x":350,"y":325},"to":{"x":520,"y":325},"start":800,"end":1400,"easing":"linear"},{"type":"arrow","from":{"x":420,"y":180},"to":{"x":620,"y":140},"color":"#60a5fa","start":1000,"end":2400},{"type":"arrow","from":{"x":420,"y":470},"to":{"x":720,"y":510},"color":"#60a5fa","start":1000,"end":2800},{"type":"arrow","from":{"x":540,"y":325},"to":{"x":780,"y":290},"color":"#60a5fa","start":1400,"end":2800},{"type":"move","id":"LW","from":{"x":420,"y":180},"to":{"x":650,"y":130},"start":1000,"end":2400,"easing":"quadInOut"},{"type":"move","id":"RW","from":{"x":420,"y":470},"to":{"x":750,"y":520},"start":1000,"end":2800,"easing":"quadInOut"},{"type":"move","id":"ST","from":{"x":520,"y":325},"to":{"x":800,"y":280},"start":1400,"end":2800,"easing":"quadInOut"},{"type":"move","id":"BALL","from":{"x":520,"y":325},"to":{"x":800,"y":280},"start":1400,"end":2800,"easing":"quadInOut"},{"type":"textLabel","text":"Defenders scrambling - gaps everywhere","x":720,"y":380,"anchor":"middle","start":2000,"end":3200},{"type":"arrow","from":{"x":680,"y":200},"to":{"x":700,"y":160},"color":"#f87171","start":1200,"end":2600},{"type":"arrow","from":{"x":700,"y":280},"to":{"x":760,"y":270},"color":"#f87171","start":1200,"end":2600},{"type":"arrow","from":{"x":680,"y":360},"to":{"x":740,"y":340},"color":"#f87171","start":1200,"end":2600},{"type":"arrow","from":{"x":660,"y":450},"to":{"x":720,"y":490},"color":"#f87171","start":1200,"end":2800},{"type":"move","id":"D1","from":{"x":680,"y":200},"to":{"x":720,"y":150},"start":1200,"end":2600,"easing":"quadOut"},{"type":"move","id":"D2","from":{"x":700,"y":280},"to":{"x":780,"y":260},"start":1200,"end":2600,"easing":"quadOut"},{"type":"move","id":"D3","from":{"x":680,"y":360},"to":{"x":760,"y":330},"start":1200,"end":2600,"easing":"quadOut"},{"type":"move","id":"D4","from":{"x":660,"y":450},"to":{"x":740,"y":500},"start":1200,"end":2800,"easing":"quadOut"},{"type":"textLabel","text":"RESULT: 3v4 attacking overload near goal","x":700,"y":600,"anchor":"middle","start":2800,"end":4000},{"type":"spotlight","id":"ST","radius":32,"start":2800,"end":4000}],"annotations":[{"text":"Window closes fast - defenders recover in ~5 seconds","x":500,"y":40,"anchor":"middle"}]}
+    };
+
+    const select = document.getElementById('scenario-select');
+    const svg = document.getElementById('pitch');
+    const warningsDiv = document.getElementById('warnings');
+    const infoDiv = document.getElementById('info');
+
+    // Populate dropdown
+    scenarios.forEach(s => {
+      const option = document.createElement('option');
+      option.value = s.id;
+      option.textContent = s.name;
+      select.appendChild(option);
+    });
+
+    select.addEventListener('change', async (e) => {
+      const scenarioId = e.target.value;
+      if (!scenarioId) return;
+
+      let data;
+      if (embeddedScenarios[scenarioId]) {
+        data = embeddedScenarios[scenarioId];
+        loadScenario(data);
+      } else {
+        // Try to fetch from scenarios folder
+        try {
+          const response = await fetch(`scenarios/${scenarioId}.json`);
+          data = await response.json();
+          loadScenario(data);
+        } catch (error) {
+          warningsDiv.innerHTML = `
+            <div class="warning-box">
+              <h3>⚠️ Could not load scenario</h3>
+              <p>File not found: scenarios/${scenarioId}.json</p>
+              <p>This checker has embedded data for the enhanced scenarios (accordion, transitions). Other scenarios need to be in a scenarios/ folder.</p>
+            </div>
+          `;
+          svg.innerHTML = '';
+        }
+      }
+    });
+
+    function loadScenario(data) {
+      svg.innerHTML = '';
+      const warnings = [];
+      const info = {
+        timedLabels: 0,
+        annotations: 0,
+        players: 0
+      };
+
+      // Safe zones
+      const EDGE_MARGIN = 30;
+      const SAFE_X_MIN = EDGE_MARGIN;
+      const SAFE_X_MAX = 1000 - EDGE_MARGIN;
+      const SAFE_Y_MIN = 60;
+      const SAFE_Y_MAX = 650 - EDGE_MARGIN;
+
+      // Draw pitch markings
+      drawPitchMarkings();
+
+      // Draw players
+      data.players.forEach(player => {
+        if (player.id === 'BALL') return;
+        info.players++;
+        
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', player.x);
+        circle.setAttribute('cy', player.y);
+        circle.setAttribute('r', player.r || 18);
+        circle.setAttribute('fill', player.color);
+        circle.setAttribute('stroke', '#fff');
+        circle.setAttribute('stroke-width', '2');
+        svg.appendChild(circle);
+
+        // Jersey number
+        if (player.label && player.label.length <= 3) {
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', player.x);
+          text.setAttribute('y', player.y);
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('dominant-baseline', 'central');
+          text.setAttribute('fill', '#fff');
+          text.setAttribute('font-size', '14');
+          text.setAttribute('font-weight', 'bold');
+          text.textContent = player.label;
+          svg.appendChild(text);
+        }
+      });
+
+      // Draw all timed labels
+      if (data.actions) {
+        data.actions.forEach(action => {
+          if (action.type === 'textLabel') {
+            info.timedLabels++;
+            drawLabel(action.x, action.y, action.text, action.anchor || 'start', '#fbbf24', warnings);
+          }
+        });
+      }
+
+      // Draw persistent annotations
+      if (data.annotations) {
+        data.annotations.forEach(ann => {
+          info.annotations++;
+          drawLabel(ann.x, ann.y, ann.text, ann.anchor || 'start', '#34d399', warnings);
+        });
+      }
+
+      // Display warnings
+      if (warnings.length > 0) {
+        warningsDiv.innerHTML = `
+          <div class="warning-box">
+            <h3>⚠️ Warnings Found (${warnings.length})</h3>
+            ${warnings.map(w => `<div class="warning-item">${w}</div>`).join('')}
+          </div>
+        `;
+      } else {
+        warningsDiv.innerHTML = `
+          <div class="info-box">
+            <h3>✅ No Issues Detected</h3>
+            <p>All labels are within safe bounds and should display correctly.</p>
+          </div>
+        `;
+      }
+
+      // Display info
+      infoDiv.innerHTML = `
+        <div class="info-box">
+          <h3>📊 Scenario Stats</h3>
+          <p>Players: ${info.players} | Timed Labels: ${info.timedLabels} | Annotations: ${info.annotations}</p>
+        </div>
+      `;
+
+      function drawLabel(x, y, text, anchor, color, warnings) {
+        const estimatedWidth = text.length * 7;
+        let adjustedX = x;
+
+        if (anchor === 'middle') {
+          adjustedX = x;
+        } else if (anchor === 'end') {
+          adjustedX = x - estimatedWidth;
+        }
+
+        // Check bounds
+        let isWarning = false;
+        if (x < SAFE_X_MIN || x > SAFE_X_MAX) {
+          warnings.push(`Label "${text.substring(0, 30)}..." at x=${x} may be cropped (safe range: ${SAFE_X_MIN}-${SAFE_X_MAX})`);
+          isWarning = true;
+        }
+        if (y < SAFE_Y_MIN || y > SAFE_Y_MAX) {
+          warnings.push(`Label "${text.substring(0, 30)}..." at y=${y} may be cropped (safe range: ${SAFE_Y_MIN}-${SAFE_Y_MAX})`);
+          isWarning = true;
+        }
+
+        // Draw background rect
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', adjustedX - 5);
+        rect.setAttribute('y', y - 14);
+        rect.setAttribute('width', estimatedWidth + 10);
+        rect.setAttribute('height', 20);
+        rect.setAttribute('fill', isWarning ? '#f87171' : color);
+        rect.setAttribute('opacity', '0.7');
+        rect.setAttribute('rx', '3');
+        svg.appendChild(rect);
+
+        // Draw text
+        const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        textEl.setAttribute('x', x);
+        textEl.setAttribute('y', y);
+        textEl.setAttribute('text-anchor', anchor);
+        textEl.setAttribute('dominant-baseline', 'central');
+        textEl.setAttribute('fill', '#fff');
+        textEl.setAttribute('font-size', '12');
+        textEl.setAttribute('font-weight', 'bold');
+        textEl.textContent = text;
+        svg.appendChild(textEl);
+      }
+
+      function drawPitchMarkings() {
+        // Center circle
+        const centerCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        centerCircle.setAttribute('cx', '500');
+        centerCircle.setAttribute('cy', '325');
+        centerCircle.setAttribute('r', '73');
+        centerCircle.setAttribute('fill', 'none');
+        centerCircle.setAttribute('stroke', '#fff');
+        centerCircle.setAttribute('stroke-width', '2');
+        svg.appendChild(centerCircle);
+
+        // Center line
+        const centerLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        centerLine.setAttribute('x1', '500');
+        centerLine.setAttribute('y1', '0');
+        centerLine.setAttribute('x2', '500');
+        centerLine.setAttribute('y2', '650');
+        centerLine.setAttribute('stroke', '#fff');
+        centerLine.setAttribute('stroke-width', '2');
+        svg.appendChild(centerLine);
+
+        // Penalty boxes (simplified)
+        const leftBox = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        leftBox.setAttribute('x', '0');
+        leftBox.setAttribute('y', '186');
+        leftBox.setAttribute('width', '132');
+        leftBox.setAttribute('height', '278');
+        leftBox.setAttribute('fill', 'none');
+        leftBox.setAttribute('stroke', '#fff');
+        leftBox.setAttribute('stroke-width', '2');
+        svg.appendChild(leftBox);
+
+        const rightBox = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rightBox.setAttribute('x', '868');
+        rightBox.setAttribute('y', '186');
+        rightBox.setAttribute('width', '132');
+        rightBox.setAttribute('height', '278');
+        rightBox.setAttribute('fill', 'none');
+        rightBox.setAttribute('stroke', '#fff');
+        rightBox.setAttribute('stroke-width', '2');
+        svg.appendChild(rightBox);
+      }
+    }
+  </script>
+</body>
+</html>
