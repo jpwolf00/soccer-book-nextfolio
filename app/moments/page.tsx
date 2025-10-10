@@ -36,7 +36,7 @@ export default function MomentsPage() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://youtu.be/qrFPRrZLGmU?t=583"
+                src="https://www.youtube.com/embed/qrFPRrZLGmU?start=583"
                 title="Aguero 93:20 Goal"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
