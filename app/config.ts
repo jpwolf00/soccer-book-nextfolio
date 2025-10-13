@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Learn Soccer Like a Local",
+  name: "Offside! See the Game Differently",
   author: "Your Name",
-  description: "The only soccer instruction book with interactive tactical animations you control. Master the tactics, formations, and unwritten rules of the world's game.",
+  description: "The soccer instruction book built for how Americans actually learn sports—with interactive tactical animations you control, historic moments you can replay, and explanations that don't assume you grew up in Manchester.",
   url: "https://yourdomain.com",
   ogImage: "https://yourdomain.com/og.jpg",
   links: {

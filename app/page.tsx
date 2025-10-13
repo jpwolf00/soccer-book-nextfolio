@@ -203,7 +203,7 @@ export default function Home() {
               href="/book"
               className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-soccer-green-600 shadow-lg transition hover:bg-gray-100"
             >
-              Pre-order Now →
+              Order Now →
             </Link>
           </div>
         </div>
