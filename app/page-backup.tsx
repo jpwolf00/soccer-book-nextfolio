@@ -23,7 +23,7 @@ export default function Home() {
                   href="/tactics"
                   className="inline-flex items-center justify-center rounded-lg bg-soccer-green-600 px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-soccer-green-700"
                 >
-                  Try Interactive Tactics â†’
+                  Try Interactive Tactics →
                 </Link>
                 <Link
                   href="/book"
@@ -33,7 +33,7 @@ export default function Home() {
                 </Link>
               </div>
               <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-                ðŸ“š QR codes in the book link directly to animations â€¢ ðŸŽ¥ Historic moments included
+                📚 QR codes in the book link directly to animations • 🎥 Historic moments included
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
               <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-soccer-green-100 to-soccer-green-200 p-8 shadow-2xl dark:from-soccer-green-900 dark:to-soccer-green-800">
                 <div className="flex h-full items-center justify-center">
                   <div className="text-center">
-                    <div className="text-8xl mb-6">âš½</div>
+                    <div className="text-8xl mb-6">⚽</div>
                     <p className="text-lg font-semibold text-soccer-green-900 dark:text-soccer-green-100">
                       Interactive Tool Preview
                     </p>
@@ -125,40 +125,40 @@ export default function Home() {
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
               <h3 className="font-bold text-lg mb-3 text-soccer-green-600">Chapters 1-4: Foundations</h3>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>â€¢ The Rules That Matter</li>
-                <li>â€¢ How Formations Breathe</li>
-                <li>â€¢ Reading Player Roles</li>
-                <li>â€¢ Mastering Offside</li>
+                <li>• The Rules That Matter</li>
+                <li>• How Formations Breathe</li>
+                <li>• Reading Player Roles</li>
+                <li>• Mastering Offside</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
               <h3 className="font-bold text-lg mb-3 text-soccer-green-600">Chapters 5-6: Reading Matches</h3>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>â€¢ Spotting Momentum Shifts</li>
-                <li>â€¢ Tactical Adjustments in Real Time</li>
+                <li>• Spotting Momentum Shifts</li>
+                <li>• Tactical Adjustments in Real Time</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
               <h3 className="font-bold text-lg mb-3 text-soccer-green-600">Chapters 7-8: The Business</h3>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>â€¢ How Teams Are Built</li>
-                <li>â€¢ Inside the Transfer Market</li>
+                <li>• How Teams Are Built</li>
+                <li>• Inside the Transfer Market</li>
               </ul>
             </div>
 
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950 md:col-span-2 lg:col-span-3">
               <h3 className="font-bold text-lg mb-3 text-soccer-green-600">Chapters 9-11: The Culture</h3>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>â€¢ Why Fans Act That Way â€¢ Songs, Scarves, and Rituals â€¢ American Soccer's Evolution</li>
+                <li>• Why Fans Act That Way • Songs, Scarves, and Rituals • American Soccer's Evolution</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-8 text-center">
             <Link href="/book" className="inline-flex items-center text-soccer-green-600 font-semibold hover:text-soccer-green-700 dark:text-soccer-green-400">
-              Read Full Chapter Descriptions â†’
+              Read Full Chapter Descriptions →
             </Link>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function Home() {
               href="/book"
               className="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-soccer-green-600 shadow-lg transition hover:bg-gray-100"
             >
-              Get the Book â†’
+              Get the Book →
             </Link>
           </div>
         </div>
