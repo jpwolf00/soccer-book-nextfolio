@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Offside! See the Game Differently",
+  name: "Offside!",
   author: "Your Name",
   description: "The soccer instruction book built for how Americans actually learn sports—with interactive tactical animations you control, historic moments you can replay, and explanations that don't assume you grew up in Manchester.",
   url: "https://yourdomain.com",
