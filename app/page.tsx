@@ -40,15 +40,21 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right side - Interactive Preview */}
+            {/* Right side - Live Interactive Preview */}
             <div className="relative">
-              <div className="aspect-video rounded-2xl bg-gray-100 dark:bg-gray-800 shadow-2xl overflow-hidden border-4 border-soccer-green-600">
-                <div className="flex h-full items-center justify-center text-gray-400">
-                  <p className="text-center px-4">
-                    Your tactical simulator will display here<br />
-                    <span className="text-sm">(Interactive tool preview)</span>
-                  </p>
-                </div>
+              <div className="aspect-video rounded-2xl bg-gray-900 shadow-2xl overflow-hidden border-4 border-soccer-green-600">
+                {/* Embedded Tactical Animation */}
+                <iframe 
+                  src="/tactics/index.html?id=accordionShape"
+                  className="w-full h-full border-0"
+                  title="Interactive Tactical Animation Preview"
+                  allow="autoplay"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  ↑ Try it: Click play and control the animation
+                </p>
               </div>
             </div>
           </div>
