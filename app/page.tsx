@@ -19,7 +19,7 @@ export default function Home() {
                 A guide for American fans
               </p>
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300">
-                The soccer instruction book built for how Americans actually learn sports—with <strong>interactive tactical animations</strong> you control, historic moments you can replay, and explanations that don't assume you grew up in Manchester.
+                The soccer instruction book built for American fans. Learn with <strong>interactive tactical animations</strong> you control, historic moments you can replay, and explanations that don't assume you grew up in Manchester.
               </p>
               <div className="mt-6 text-base text-gray-500 dark:text-gray-400">
                 📚 QR codes link directly to animations • 🎥 Study the moments that made history • 🎮 Control the pace, pause, rewind
