@@ -42,7 +42,7 @@ export default function Home() {
 
             {/* Right side - Live Interactive Preview */}
             <div className="relative">
-              <div className="rounded-2xl bg-gray-900 shadow-2xl overflow-hidden border-4 border-soccer-green-600 h-[500px] sm:h-[600px] lg:h-[650px]">
+              <div className="rounded-2xl bg-gray-900 shadow-2xl overflow-hidden border-4 border-soccer-green-600 h-[500px] sm:h-[500px] lg:h-[500px]">
                 {/* Embedded Tactical Animation */}
                 <iframe 
                   src="/tactics/index.html?id=accordionShape"
