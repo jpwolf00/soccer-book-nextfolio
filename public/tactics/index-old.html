@@ -173,13 +173,9 @@ const FALLBACK_MANIFEST = [
 
 async function loadManifest() {
   try {
-    const cacheBuster = Date.now();
-    const response = await fetch(`scenarios/manifest.json?v=${cacheBuster}`);
+    const response = await fetch('scenarios/manifest.json');
     if (!response.ok) throw new Error('Manifest not found');
-    const data = await response.json();
-    console.log('Loaded manifest:', data);
-    console.log('Is array?', Array.isArray(data));
-    return data;
+    return await response.json();
   } catch (error) {
     console.warn('Could not load manifest.json, using fallback scenarios:', error);
     return FALLBACK_MANIFEST;
@@ -193,8 +189,7 @@ async function loadScenarioById(id) {
   }
   
   try {
-    const cacheBuster = Date.now();
-    const response = await fetch(`scenarios/${id}.json?v=${cacheBuster}`);
+    const response = await fetch(`scenarios/${id}.json`);
     if (!response.ok) throw new Error(`Scenario ${id} not found`);
     return await response.json();
   } catch (error) {
@@ -204,13 +199,6 @@ async function loadScenarioById(id) {
 }
 
 function populateScenarioDropdown(manifest) {
-  console.log('Populating dropdown with manifest:', manifest);
-  if (!Array.isArray(manifest)) {
-    console.error('Manifest is not an array!', typeof manifest, manifest);
-    alert('Manifest format error - check console');
-    return;
-  }
-  
   scenarioSelect.innerHTML = '';
   const groups = {};
   manifest.forEach(item => {
@@ -431,6 +419,7 @@ function renderFrame(t){
       if(t>=start && t<=end) drawTextLabel(a.text,a.x,a.y,a.anchor);
     }
     else if(type==='arrow'){
+      console.log('Arrow action at t='+t, 'start='+start, 'end='+end, 'visible='+(t>=start && t<=end));
       if(t>=start && t<=end) drawArrow(a.from.x,a.from.y,a.to.x,a.to.y,a.color||'#fff');
     }
   }
@@ -455,7 +444,9 @@ function tick(now){
   currentTime+=dt*speed; 
   
   if(currentTime>=duration){ 
+    console.log('END REACHED - Loop:', toggleLoop.checked);
     if(toggleLoop.checked) {
+      console.log('LOOPING - restart');
       currentTime=0;
       lastTick=performance.now();
       renderFrame(0);
@@ -465,6 +456,7 @@ function tick(now){
       }
       return;
     } else {
+      console.log('NO LOOP - pause');
       currentTime=duration;
       renderFrame(currentTime);
       scrubber.value=String(currentTime);
