@@ -22,7 +22,7 @@
   {
     "id": "thirdManRun",
     "name": "Third-Man Run",
-    "file": "thirdManRun.json",
+    "file": "thirdmanrun_new.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -42,7 +42,7 @@
   {
     "id": "targetVsRunner",
     "name": "Target Man vs Channel Runner",
-    "file": "targetVsRunner.json",
+    "file": "targetvsrunner_new.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -52,7 +52,7 @@
   {
     "id": "false9",
     "name": "False 9 Movement",
-    "file": "false9.json",
+    "file": "false9_new.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -62,7 +62,7 @@
   {
     "id": "coordinatedPress",
     "name": "Coordinated Press",
-    "file": "coordinatedPress.json",
+    "file": "coordinatedpress_new.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -112,7 +112,7 @@
   {
     "id": "pressingTrigger",
     "name": "Pressing Trigger",
-    "file": "pressingTrigger.json",
+    "file": "pressingtrigger_new.json",
     "group": "Chapter 5: Reading a Match",
     "chapter": 5,
     "section": "Reading a Match",
