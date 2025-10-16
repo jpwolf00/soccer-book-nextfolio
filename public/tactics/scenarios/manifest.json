@@ -1,58 +1,135 @@
-[
-  {
-    "id": "accordionShape",
-    "name": "Accordion Animation (Shape Breathing)",
-    "file": "accordionShape.json",
-    "group": "Shapes and Tactics",
-    "chapter": 2,
-    "section": "Two Pictures, One Team"
-  },
-  {
-    "id": "onsideBeatsTrap",
-    "name": "Beats the Trap (Onside)",
-    "file": "onsideBeatsTrap.json",
-    "group": "Offside Mechanics",
-    "chapter": 4,
-    "section": "The Offside Trap"
-  },
-  {
-    "id": "caughtOffside",
-    "name": "Caught by the Trap (Offside)",
-    "file": "caughtOffside.json",
-    "group": "Offside Mechanics",
-    "chapter": 4,
-    "section": "The Offside Trap"
-  },
-  {
-    "id": "timedRun",
-    "name": "Timed Run (Beating Offside)",
-    "file": "timedRun.json",
-    "group": "Offside Mechanics",
-    "chapter": 4,
-    "section": "Timing the Run"
-  },
-  {
-    "id": "overloadCutback",
-    "name": "Overload to Isolate → Cutback Goal",
-    "file": "overloadCutback.json",
-    "group": "Shapes and Tactics",
-    "chapter": 2,
-    "section": "How Teams Build From the Back"
-  },
-  {
-    "id": "transitions",
-    "name": "Transitions: The Five-Second Window",
-    "file": "transitions.json",
-    "group": "Reading the Game",
-    "chapter": 5,
-    "section": "Transitions"
-  },
-  {
-    "id": "invertedWinger",
-    "name": "Inverted Winger",
-    "file": "invertedWinger.json",
-    "group": "Player Roles",
-    "chapter": 3,
-    "section": "Wingers"
+{
+  "scenarios": [
+    {
+      "id": "accordionShape",
+      "name": "Accordion Animation",
+      "file": "accordionShape.json",
+      "group": "Chapter 2: Shapes and Setups",
+      "chapter": 2,
+      "section": "Two Pictures, One Team",
+      "slug": "accordion",
+      "description": "Formation expanding/compressing in real time"
+    },
+    {
+      "id": "overloadCutback",
+      "name": "Overload to Cutback Goal",
+      "file": "overloadCutback.json",
+      "group": "Chapter 2: Shapes and Setups",
+      "chapter": 2,
+      "section": "How Teams Build From the Back",
+      "slug": "overload-cutback",
+      "description": "Three attackers flood one side, ball cuts back across goal"
+    },
+    {
+      "id": "thirdManRun",
+      "name": "Third-Man Run",
+      "file": "thirdManRun.json",
+      "group": "Chapter 3: Who Does What",
+      "chapter": 3,
+      "section": "Roles",
+      "slug": "third-man-run",
+      "description": "A→B pass, defenders shift, C arrives late unmarked"
+    },
+    {
+      "id": "invertedWinger",
+      "name": "Inverted Winger",
+      "file": "invertedWinger.json",
+      "group": "Chapter 3: Who Does What",
+      "chapter": 3,
+      "section": "Wingers",
+      "slug": "inverted-winger",
+      "description": "Right-footed winger cutting inside from left wing onto strong foot"
+    },
+    {
+      "id": "targetVsRunner",
+      "name": "Target Man vs Channel Runner",
+      "file": "targetVsRunner.json",
+      "group": "Chapter 3: Who Does What",
+      "chapter": 3,
+      "section": "Roles",
+      "slug": "target-vs-runner",
+      "description": "Target man holding up vs. channel runner sprinting behind"
+    },
+    {
+      "id": "false9",
+      "name": "False 9 Movement",
+      "file": "false9.json",
+      "group": "Chapter 3: Who Does What",
+      "chapter": 3,
+      "section": "Roles",
+      "slug": "false-9",
+      "description": "False 9 dropping deep, center-backs following, space opening behind"
+    },
+    {
+      "id": "coordinatedPress",
+      "name": "Coordinated Press",
+      "file": "coordinatedPress.json",
+      "group": "Chapter 3: Who Does What",
+      "chapter": 3,
+      "section": "Roles",
+      "slug": "coordinated-press",
+      "description": "Six players closing passing lanes simultaneously on trigger"
+    },
+    {
+      "id": "onsideBeatsTrap",
+      "name": "Beats the Trap (Onside)",
+      "file": "onsideBeatsTrap.json",
+      "group": "Chapter 4: Offside",
+      "chapter": 4,
+      "section": "The Offside Trap",
+      "slug": "offside-basics",
+      "description": "Attacker times run perfectly to stay onside"
+    },
+    {
+      "id": "caughtOffside",
+      "name": "Caught by the Trap (Offside)",
+      "file": "caughtOffside.json",
+      "group": "Chapter 4: Offside",
+      "chapter": 4,
+      "section": "The Offside Trap",
+      "slug": "offside-trap",
+      "description": "Striker runs too early and is caught offside"
+    },
+    {
+      "id": "timedRun",
+      "name": "Timed Run (Beating Offside)",
+      "file": "timedRun.json",
+      "group": "Chapter 4: Offside",
+      "chapter": 4,
+      "section": "Timing the Run",
+      "slug": "timed-run",
+      "description": "Striker holds position then explodes forward onside"
+    },
+    {
+      "id": "transitions",
+      "name": "Transitions: Five-Second Window",
+      "file": "transitions.json",
+      "group": "Chapter 5: Reading a Match",
+      "chapter": 5,
+      "section": "Transitions",
+      "slug": "transitions",
+      "description": "Team wins ball and exploits disorganized defense"
+    },
+    {
+      "id": "pressingTrigger",
+      "name": "Pressing Trigger",
+      "file": "pressingTrigger.json",
+      "group": "Chapter 5: Reading a Match",
+      "chapter": 5,
+      "section": "Reading a Match",
+      "slug": "pressing-trigger",
+      "description": "Heavy touch triggers six-player swarm"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "totalScenarios": 12,
+    "lastUpdated": "2025-10-15",
+    "chapters": {
+      "2": "Shapes and Setups",
+      "3": "Who Does What",
+      "4": "Offside",
+      "5": "Reading a Match"
+    }
   }
-]
+}

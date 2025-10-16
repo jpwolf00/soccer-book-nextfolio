@@ -1,0 +1,223 @@
+{
+  "id": "false9",
+  "name": "False 9 Movement",
+  "chapter": 3,
+  "section": "Roles",
+  "description": "False 9 drops deep, center-backs follow or hold position, space opens behind for wingers",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "F9",
+      "x": 720,
+      "y": 325,
+      "color": "#f87171",
+      "label": "9"
+    },
+    {
+      "id": "LW",
+      "x": 650,
+      "y": 180,
+      "color": "#f87171",
+      "label": "11"
+    },
+    {
+      "id": "RW",
+      "x": 650,
+      "y": 470,
+      "color": "#f87171",
+      "label": "7"
+    },
+    {
+      "id": "MID",
+      "x": 550,
+      "y": 325,
+      "color": "#f87171",
+      "label": "8"
+    },
+    {
+      "id": "CB1",
+      "x": 820,
+      "y": 260,
+      "color": "#60a5fa",
+      "label": "4"
+    },
+    {
+      "id": "CB2",
+      "x": 820,
+      "y": 390,
+      "color": "#60a5fa",
+      "label": "5"
+    },
+    {
+      "id": "BALL",
+      "x": 550,
+      "y": 325,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "textLabel",
+      "text": "PHASE 1: False 9 drops deep",
+      "x": 150,
+      "y": 70,
+      "anchor": "start",
+      "start": 0,
+      "end": 1400
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 710, "y": 325},
+      "to": {"x": 580, "y": 325},
+      "color": "#f87171",
+      "start": 0,
+      "end": 1200
+    },
+    {
+      "type": "move",
+      "id": "F9",
+      "from": {"x": 720, "y": 325},
+      "to": {"x": 600, "y": 325},
+      "start": 0,
+      "end": 1200,
+      "easing": "quadOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "F9",
+      "radius": 32,
+      "start": 800,
+      "end": 1400
+    },
+    {
+      "type": "textLabel",
+      "text": "PHASE 2: Center-back follows or holds?",
+      "x": 550,
+      "y": 70,
+      "anchor": "start",
+      "start": 1000,
+      "end": 2200
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 820, "y": 260},
+      "to": {"x": 720, "y": 280},
+      "color": "#60a5fa",
+      "start": 1000,
+      "end": 2000
+    },
+    {
+      "type": "move",
+      "id": "CB1",
+      "from": {"x": 820, "y": 260},
+      "to": {"x": 720, "y": 280},
+      "start": 1000,
+      "end": 2000,
+      "easing": "quadOut"
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 550, "y": 325},
+      "to": {"x": 600, "y": 325},
+      "start": 1400,
+      "end": 1800
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 550, "y": 325},
+      "to": {"x": 600, "y": 325},
+      "start": 1400,
+      "end": 1800,
+      "easing": "linear"
+    },
+    {
+      "type": "textLabel",
+      "text": "PHASE 3: Space opens behind defense",
+      "x": 550,
+      "y": 70,
+      "anchor": "start",
+      "start": 2000,
+      "end": 3500
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 660, "y": 180},
+      "to": {"x": 820, "y": 200},
+      "color": "#ffeb3b",
+      "start": 2000,
+      "end": 3000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 660, "y": 470},
+      "to": {"x": 820, "y": 450},
+      "color": "#ffeb3b",
+      "start": 2000,
+      "end": 3000
+    },
+    {
+      "type": "move",
+      "id": "LW",
+      "from": {"x": 650, "y": 180},
+      "to": {"x": 840, "y": 190},
+      "start": 2000,
+      "end": 3000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "RW",
+      "from": {"x": 650, "y": 470},
+      "to": {"x": 840, "y": 460},
+      "start": 2000,
+      "end": 3000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 600, "y": 325},
+      "to": {"x": 840, "y": 190},
+      "start": 2600,
+      "end": 3200
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 600, "y": 325},
+      "to": {"x": 840, "y": 190},
+      "start": 2600,
+      "end": 3200,
+      "easing": "linear"
+    },
+    {
+      "type": "spotlight",
+      "id": "LW",
+      "radius": 32,
+      "start": 3000,
+      "end": 3800
+    },
+    {
+      "type": "textLabel",
+      "text": "RESULT: Winger runs into vacated space",
+      "x": 820,
+      "y": 120,
+      "anchor": "end",
+      "start": 3000,
+      "end": 4200
+    }
+  ],
+  "annotations": [
+    {
+      "text": "False 9: striker who drops deep to create space for others",
+      "x": 500,
+      "y": 620,
+      "anchor": "middle"
+    }
+  ]
+}

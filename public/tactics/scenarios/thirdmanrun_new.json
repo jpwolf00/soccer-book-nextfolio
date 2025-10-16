@@ -1,0 +1,200 @@
+{
+  "id": "thirdManRun",
+  "name": "Third-Man Run",
+  "chapter": 3,
+  "section": "Roles",
+  "description": "A→B pass, defenders shift, C arrives late unmarked into vacated space",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "A",
+      "x": 400,
+      "y": 325,
+      "color": "#f87171",
+      "label": "8"
+    },
+    {
+      "id": "B",
+      "x": 550,
+      "y": 220,
+      "color": "#f87171",
+      "label": "10"
+    },
+    {
+      "id": "C",
+      "x": 450,
+      "y": 430,
+      "color": "#f87171",
+      "label": "7"
+    },
+    {
+      "id": "D1",
+      "x": 650,
+      "y": 250,
+      "color": "#60a5fa",
+      "label": "5"
+    },
+    {
+      "id": "D2",
+      "x": 620,
+      "y": 350,
+      "color": "#60a5fa",
+      "label": "6"
+    },
+    {
+      "id": "BALL",
+      "x": 400,
+      "y": 325,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "textLabel",
+      "text": "PHASE 1: A passes to B",
+      "x": 150,
+      "y": 70,
+      "anchor": "start",
+      "start": 0,
+      "end": 1200
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 410, "y": 315},
+      "to": {"x": 540, "y": 230},
+      "color": "#f87171",
+      "start": 0,
+      "end": 800
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 550, "y": 220},
+      "start": 0,
+      "end": 800
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 550, "y": 220},
+      "start": 0,
+      "end": 800,
+      "easing": "linear"
+    },
+    {
+      "type": "textLabel",
+      "text": "PHASE 2: Defenders shift to cover B",
+      "x": 550,
+      "y": 70,
+      "anchor": "start",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 650, "y": 250},
+      "to": {"x": 600, "y": 220},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 1600
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 620, "y": 350},
+      "to": {"x": 590, "y": 280},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 1600
+    },
+    {
+      "type": "move",
+      "id": "D1",
+      "from": {"x": 650, "y": 250},
+      "to": {"x": 600, "y": 220},
+      "start": 800,
+      "end": 1600,
+      "easing": "quadOut"
+    },
+    {
+      "type": "move",
+      "id": "D2",
+      "from": {"x": 620, "y": 350},
+      "to": {"x": 590, "y": 280},
+      "start": 800,
+      "end": 1600,
+      "easing": "quadOut"
+    },
+    {
+      "type": "textLabel",
+      "text": "PHASE 3: C (third man) runs into vacated space",
+      "x": 550,
+      "y": 70,
+      "anchor": "start",
+      "start": 1400,
+      "end": 3000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 460, "y": 420},
+      "to": {"x": 650, "y": 370},
+      "color": "#ffeb3b",
+      "start": 1400,
+      "end": 2600
+    },
+    {
+      "type": "move",
+      "id": "C",
+      "from": {"x": 450, "y": 430},
+      "to": {"x": 670, "y": 360},
+      "start": 1400,
+      "end": 2600,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "C",
+      "radius": 32,
+      "start": 2000,
+      "end": 3000
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 550, "y": 220},
+      "to": {"x": 670, "y": 360},
+      "start": 2200,
+      "end": 2800
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 550, "y": 220},
+      "to": {"x": 670, "y": 360},
+      "start": 2200,
+      "end": 2800,
+      "easing": "linear"
+    },
+    {
+      "type": "textLabel",
+      "text": "RESULT: C receives unmarked in dangerous area",
+      "x": 700,
+      "y": 420,
+      "anchor": "start",
+      "start": 2800,
+      "end": 4000
+    }
+  ],
+  "annotations": [
+    {
+      "text": "The 'third man' creates numerical advantage by arriving late",
+      "x": 500,
+      "y": 620,
+      "anchor": "middle"
+    }
+  ]
+}

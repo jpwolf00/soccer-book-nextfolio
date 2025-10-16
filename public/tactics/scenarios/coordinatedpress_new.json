@@ -1,0 +1,262 @@
+{
+  "id": "coordinatedPress",
+  "name": "Coordinated Press",
+  "chapter": 3,
+  "section": "Roles",
+  "description": "Six players closing passing lanes simultaneously on trigger - heavy touch activates the swarm",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "P1",
+      "x": 520,
+      "y": 180,
+      "color": "#60a5fa",
+      "label": "9"
+    },
+    {
+      "id": "P2",
+      "x": 450,
+      "y": 240,
+      "color": "#60a5fa",
+      "label": "11"
+    },
+    {
+      "id": "P3",
+      "x": 590,
+      "y": 240,
+      "color": "#60a5fa",
+      "label": "7"
+    },
+    {
+      "id": "P4",
+      "x": 420,
+      "y": 325,
+      "color": "#60a5fa",
+      "label": "8"
+    },
+    {
+      "id": "P5",
+      "x": 520,
+      "y": 360,
+      "color": "#60a5fa",
+      "label": "6"
+    },
+    {
+      "id": "P6",
+      "x": 620,
+      "y": 325,
+      "color": "#60a5fa",
+      "label": "10"
+    },
+    {
+      "id": "PASSER",
+      "x": 720,
+      "y": 325,
+      "color": "#f87171",
+      "label": "5"
+    },
+    {
+      "id": "TARGET1",
+      "x": 780,
+      "y": 240,
+      "color": "#f87171",
+      "label": "2"
+    },
+    {
+      "id": "TARGET2",
+      "x": 820,
+      "y": 325,
+      "color": "#f87171",
+      "label": "GK"
+    },
+    {
+      "id": "TARGET3",
+      "x": 780,
+      "y": 410,
+      "color": "#f87171",
+      "label": "3"
+    },
+    {
+      "id": "BALL",
+      "x": 720,
+      "y": 325,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "textLabel",
+      "text": "TRIGGER: Heavy touch by defender",
+      "x": 150,
+      "y": 70,
+      "anchor": "start",
+      "start": 0,
+      "end": 1200
+    },
+    {
+      "type": "spotlight",
+      "id": "PASSER",
+      "radius": 35,
+      "start": 0,
+      "end": 1000
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 720, "y": 325},
+      "to": {"x": 740, "y": 315},
+      "start": 0,
+      "end": 400,
+      "easing": "quadOut"
+    },
+    {
+      "type": "move",
+      "id": "PASSER",
+      "from": {"x": 720, "y": 325},
+      "to": {"x": 730, "y": 325},
+      "start": 0,
+      "end": 400,
+      "easing": "linear"
+    },
+    {
+      "type": "textLabel",
+      "text": "PRESS: Six players swarm simultaneously",
+      "x": 550,
+      "y": 70,
+      "anchor": "start",
+      "start": 800,
+      "end": 2800
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 520, "y": 190},
+      "to": {"x": 700, "y": 310},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 460, "y": 250},
+      "to": {"x": 650, "y": 300},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 590, "y": 250},
+      "to": {"x": 710, "y": 300},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 430, "y": 325},
+      "to": {"x": 620, "y": 325},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 530, "y": 360},
+      "to": {"x": 680, "y": 340},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 620, "y": 335},
+      "to": {"x": 710, "y": 340},
+      "color": "#60a5fa",
+      "start": 800,
+      "end": 2000
+    },
+    {
+      "type": "move",
+      "id": "P1",
+      "from": {"x": 520, "y": 180},
+      "to": {"x": 700, "y": 300},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "P2",
+      "from": {"x": 450, "y": 240},
+      "to": {"x": 650, "y": 290},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "P3",
+      "from": {"x": 590, "y": 240},
+      "to": {"x": 710, "y": 290},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "P4",
+      "from": {"x": 420, "y": 325},
+      "to": {"x": 620, "y": 325},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "P5",
+      "from": {"x": 520, "y": 360},
+      "to": {"x": 680, "y": 330},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "move",
+      "id": "P6",
+      "from": {"x": 620, "y": 325},
+      "to": {"x": 710, "y": 330},
+      "start": 800,
+      "end": 2000,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "textLabel",
+      "text": "RESULT: All passing lanes blocked",
+      "x": 650,
+      "y": 240,
+      "anchor": "middle",
+      "start": 2000,
+      "end": 3200
+    },
+    {
+      "type": "spotlight",
+      "id": "PASSER",
+      "radius": 40,
+      "start": 2200,
+      "end": 3200
+    }
+  ],
+  "annotations": [
+    {
+      "text": "Coordinated pressing: simultaneous movement on trigger",
+      "x": 500,
+      "y": 620,
+      "anchor": "middle"
+    }
+  ]
+}
