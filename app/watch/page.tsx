@@ -20,15 +20,15 @@ export default function WatchPage() {
         </div>
       </section>
 
-      {/* Major Men's Leagues Section */}
+      {/* Major European Leagues Section */}
       <section className="py-24 bg-white dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-              Major Leagues
+              Major European Leagues
             </h2>
             <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-              Where to find the top men's professional leagues
+              Where to find the top European professional leagues
             </p>
           </div>
 
@@ -60,7 +60,17 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Champions League (Paramount+)</li>
+                    <li>• Europa League (Paramount+)</li>
+                    <li>• FA Cup (ESPN+)</li>
+                    <li>• Carabao Cup (Paramount+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     Most matches on Peacock; bigger games on NBC/USA. Rights through 2027-28.
                   </p>
                 </div>
@@ -94,7 +104,16 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Champions League (Paramount+)</li>
+                    <li>• Europa League (Paramount+)</li>
+                    <li>• Copa del Rey (ESPN+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     Complete coverage of Spanish top flight. Rights through 2028-29.
                   </p>
                 </div>
@@ -128,7 +147,16 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Champions League (Paramount+)</li>
+                    <li>• Europa League (Paramount+)</li>
+                    <li>• DFB-Pokal (ESPN+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     Complete German league coverage. Rights through 2025-26.
                   </p>
                 </div>
@@ -162,7 +190,16 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Champions League (Paramount+)</li>
+                    <li>• Europa League (Paramount+)</li>
+                    <li>• Coppa Italia (Paramount+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     Italian league coverage. Rights through 2026-27.
                   </p>
                 </div>
@@ -196,19 +233,43 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Champions League (Paramount+)</li>
+                    <li>• Europa League (Paramount+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     Limited coverage compared to other top-5 leagues.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      {/* US Soccer Section - NEW */}
+      <section className="py-24 bg-gray-50 dark:bg-gray-900">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+              US Soccer
+            </h2>
+            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+              American leagues and national teams
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* MLS */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">MLS</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">United States</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Major League Soccer</p>
                 </div>
                 <span className="text-2xl">🇺🇸</span>
               </div>
@@ -230,9 +291,160 @@ export default function WatchPage() {
                 </div>
                 
                 <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Related Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• US Open Cup (ESPN+)</li>
+                    <li>• Leagues Cup (Apple TV+)</li>
+                    <li>• MLS Cup Playoffs (Apple TV+)</li>
+                  </ul>
+                </div>
+                
+                <div className="pt-2">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
                     ~30 select matches also on Fox/FS1. Rights through 2032.
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* NWSL */}
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">NWSL</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Women's Professional League</p>
+                </div>
+                <span className="text-2xl">🇺🇸</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">📺 Where to Watch</p>
+                  <p className="text-base text-gray-900 dark:text-white">Prime Video, CBS Sports</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">💰 Cost</p>
+                  <p className="text-base text-gray-900 dark:text-white">Included with Prime ($14.99/mo)</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">⚽ Coverage</p>
+                  <p className="text-base text-gray-900 dark:text-white">All matches</p>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
+                    Most matches on Prime Video; select matches on CBS Sports Network/Paramount+. Rights through 2027.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* USL Championship */}
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">USL Championship</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Second Tier US League</p>
+                </div>
+                <span className="text-2xl">🇺🇸</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">📺 Where to Watch</p>
+                  <p className="text-base text-gray-900 dark:text-white">ESPN+, CBS Sports</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">💰 Cost</p>
+                  <p className="text-base text-gray-900 dark:text-white">$11.99/month (ESPN+)</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">⚽ Coverage</p>
+                  <p className="text-base text-gray-900 dark:text-white">Most matches</p>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-xs text-gray-500 dark:text-gray-500">
+                    Second division of US soccer. Teams can also compete in US Open Cup.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* USMNT */}
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">USMNT</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Men's National Team</p>
+                </div>
+                <span className="text-2xl">🇺🇸</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">📺 Where to Watch</p>
+                  <p className="text-base text-gray-900 dark:text-white">Fox, FS1, FS2, Universo</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">💰 Cost</p>
+                  <p className="text-base text-gray-900 dark:text-white">Free (broadcast TV/cable)</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">⚽ Coverage</p>
+                  <p className="text-base text-gray-900 dark:text-white">Most matches nationally broadcast</p>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Major Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• World Cup 2026 (USA/Canada/Mexico)</li>
+                    <li>• Copa América (Fox networks)</li>
+                    <li>• Gold Cup (Fox networks)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* USWNT */}
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">USWNT</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Women's National Team</p>
+                </div>
+                <span className="text-2xl">🇺🇸</span>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">📺 Where to Watch</p>
+                  <p className="text-base text-gray-900 dark:text-white">Fox, FS1, FS2, ESPN</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">💰 Cost</p>
+                  <p className="text-base text-gray-900 dark:text-white">Free (broadcast TV/cable)</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">⚽ Coverage</p>
+                  <p className="text-base text-gray-900 dark:text-white">Most matches nationally broadcast</p>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">🏆 Major Tournaments:</p>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Women's World Cup 2027 (Brazil)</li>
+                    <li>• Olympics 2028 (Los Angeles)</li>
+                    <li>• SheBelieves Cup (varies)</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -240,12 +452,12 @@ export default function WatchPage() {
         </div>
       </section>
 
-      {/* Major Tournaments Section */}
-      <section className="py-24 bg-gray-50 dark:bg-gray-900">
+      {/* European Tournaments Section */}
+      <section className="py-24 bg-white dark:bg-gray-950">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-              Major Tournaments
+              European Tournaments
             </h2>
             <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
               Cup competitions and international tournaments
@@ -254,7 +466,7 @@ export default function WatchPage() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Champions League */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">UEFA Champions League</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Europe's Premier Club Competition</p>
@@ -280,7 +492,7 @@ export default function WatchPage() {
             </div>
 
             {/* Europa League */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">UEFA Europa League</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">European Competition</p>
@@ -305,8 +517,34 @@ export default function WatchPage() {
               </div>
             </div>
 
+            {/* Conference League */}
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">UEFA Conference League</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Third-Tier European Competition</p>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">📺 Where to Watch</p>
+                  <p className="text-base text-gray-900 dark:text-white">Paramount+</p>
+                </div>
+                
+                <div>
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">💰 Cost</p>
+                  <p className="text-base text-gray-900 dark:text-white">$7.99/month</p>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    All matches available. Rights through 2029-30.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* FA Cup */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">FA Cup</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">England's Historic Cup</p>
@@ -332,7 +570,7 @@ export default function WatchPage() {
             </div>
 
             {/* Carabao Cup */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Carabao Cup</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">English League Cup</p>
@@ -358,7 +596,7 @@ export default function WatchPage() {
             </div>
 
             {/* US Open Cup */}
-            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 hover:border-soccer-green-600 transition">
+            <div className="rounded-lg border-2 border-gray-200 dark:border-gray-800 p-6 hover:border-soccer-green-600 transition">
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">US Open Cup</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">America's Oldest Competition</p>
@@ -387,7 +625,7 @@ export default function WatchPage() {
       </section>
 
       {/* Streaming Services Quick Reference */}
-      <section className="py-24 bg-white dark:bg-gray-950">
+      <section className="py-24 bg-gray-50 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
@@ -400,7 +638,7 @@ export default function WatchPage() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {/* Peacock */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-6">
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Peacock</h3>
               <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$7.99/month</p>
               
@@ -417,7 +655,7 @@ export default function WatchPage() {
             </div>
 
             {/* ESPN+ */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-6">
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">ESPN+</h3>
               <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$11.99/month</p>
               
@@ -427,7 +665,8 @@ export default function WatchPage() {
                   <li>• La Liga (all matches)</li>
                   <li>• Bundesliga (all matches)</li>
                   <li>• FA Cup</li>
-                  <li>• Select other leagues & cups</li>
+                  <li>• USL Championship</li>
+                  <li>• US Open Cup (select matches)</li>
                 </ul>
               </div>
               
@@ -437,7 +676,7 @@ export default function WatchPage() {
             </div>
 
             {/* Paramount+ */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-6">
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Paramount+</h3>
               <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$7.99/month</p>
               
@@ -446,8 +685,10 @@ export default function WatchPage() {
                 <ul className="text-base text-gray-600 dark:text-gray-400 space-y-1">
                   <li>• Champions League (all matches)</li>
                   <li>• Europa League</li>
+                  <li>• Conference League</li>
                   <li>• Serie A (most matches)</li>
                   <li>• Carabao Cup</li>
+                  <li>• NWSL (select matches)</li>
                 </ul>
               </div>
               
@@ -457,7 +698,7 @@ export default function WatchPage() {
             </div>
 
             {/* Apple TV+ MLS */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-6">
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Apple TV+ (MLS Season Pass)</h3>
               <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$14.99/month</p>
               
@@ -466,6 +707,7 @@ export default function WatchPage() {
                 <ul className="text-base text-gray-600 dark:text-gray-400 space-y-1">
                   <li>• MLS (all matches)</li>
                   <li>• Leagues Cup</li>
+                  <li>• MLS Cup Playoffs</li>
                 </ul>
               </div>
               
@@ -474,8 +716,25 @@ export default function WatchPage() {
               </p>
             </div>
 
+            {/* Prime Video */}
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Prime Video</h3>
+              <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$14.99/month (Prime membership)</p>
+              
+              <div className="space-y-2 mb-4">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">⚽ Soccer Coverage:</p>
+                <ul className="text-base text-gray-600 dark:text-gray-400 space-y-1">
+                  <li>• NWSL (most matches)</li>
+                </ul>
+              </div>
+              
+              <p className="text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 pt-4">
+                <strong>Who should subscribe:</strong> NWSL fans. Prime membership includes other benefits (shipping, video, music).
+              </p>
+            </div>
+
             {/* fuboTV */}
-            <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-6">
+            <div className="rounded-lg bg-white dark:bg-gray-950 p-6 border-2 border-gray-200 dark:border-gray-800">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">fuboTV</h3>
               <p className="text-lg text-soccer-green-600 dark:text-soccer-green-400 font-semibold mb-4">$79.99/month</p>
               
@@ -496,11 +755,11 @@ export default function WatchPage() {
       </section>
 
       {/* Disclaimer Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+      <section className="py-12 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              <strong>Disclaimer:</strong> Broadcast information changes frequently. While we strive to keep this page current, please always verify match times and broadcast information with official league and broadcaster sources. Pricing and availability subject to change. We are not affiliated with any broadcaster, league, or streaming service mentioned on this page.
+              <strong>Disclaimer:</strong> Broadcast information changes frequently. While we strive to keep this page current, always verify match times and broadcast information with official league and broadcaster sources. Pricing and availability subject to change. We are not affiliated with any broadcaster, league, or streaming service mentioned on this page.
             </p>
             <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
               Last updated: October 17, 2025
