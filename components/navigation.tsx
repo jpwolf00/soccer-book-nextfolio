@@ -12,6 +12,7 @@ export function Navigation() {
     { href: '/blog', label: 'Blog' },
     { href: '/tactics', label: 'Interactive Tactics' },
     { href: '/moments', label: 'Historic Moments' },
+    { href: '/watch', label: 'Where to Watch' },
   ]
 
   return (

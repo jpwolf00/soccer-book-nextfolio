@@ -45,6 +45,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/watch" className="text-sm text-gray-600 hover:text-soccer-green-600 dark:text-gray-400">
+                  Where to Watch
+                </Link>
+              </li>
+              <li>
                 <Link href="/book" className="text-sm text-gray-600 hover:text-soccer-green-600 dark:text-gray-400">
                   The Book
                 </Link>
