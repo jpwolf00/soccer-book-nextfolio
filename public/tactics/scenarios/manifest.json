@@ -2,7 +2,7 @@
   {
     "id": "accordionShape",
     "name": "Accordion Animation",
-    "file": "accordionShape.json",
+    "file": "accordionshape.json",
     "group": "Chapter 2: Shapes and Setups",
     "chapter": 2,
     "section": "Two Pictures, One Team",
@@ -12,7 +12,7 @@
   {
     "id": "overloadCutback",
     "name": "Overload to Cutback Goal",
-    "file": "overloadCutback.json",
+    "file": "overloadcutback.json",
     "group": "Chapter 2: Shapes and Setups",
     "chapter": 2,
     "section": "How Teams Build From the Back",
@@ -22,7 +22,7 @@
   {
     "id": "thirdManRun",
     "name": "Third-Man Run",
-    "file": "thirdManRun.json",
+    "file": "thirdmanrun.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -32,7 +32,7 @@
   {
     "id": "invertedWinger",
     "name": "Inverted Winger",
-    "file": "invertedWinger.json",
+    "file": "invertedwinger.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Wingers",
@@ -42,7 +42,7 @@
   {
     "id": "targetVsRunner",
     "name": "Target Man vs Channel Runner",
-    "file": "targetvsrunner_new.json",
+    "file": "targetvsrunner.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -52,7 +52,7 @@
   {
     "id": "false9",
     "name": "False 9 Movement",
-    "file": "false9_new.json",
+    "file": "false9.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -62,7 +62,7 @@
   {
     "id": "coordinatedPress",
     "name": "Coordinated Press",
-    "file": "coordinatedpress_new.json",
+    "file": "coordinatedpress.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -72,7 +72,7 @@
   {
     "id": "onsideBeatsTrap",
     "name": "Beats the Trap (Onside)",
-    "file": "onsideBeatsTrap.json",
+    "file": "onsidebeatstrap.json",
     "group": "Chapter 4: Offside",
     "chapter": 4,
     "section": "The Offside Trap",
@@ -82,7 +82,7 @@
   {
     "id": "caughtOffside",
     "name": "Caught by the Trap (Offside)",
-    "file": "caughtOffside.json",
+    "file": "caughtoffside.json",
     "group": "Chapter 4: Offside",
     "chapter": 4,
     "section": "The Offside Trap",
@@ -92,7 +92,7 @@
   {
     "id": "timedRun",
     "name": "Timed Run (Beating Offside)",
-    "file": "timedRun.json",
+    "file": "timedrun.json",
     "group": "Chapter 4: Offside",
     "chapter": 4,
     "section": "Timing the Run",
@@ -112,7 +112,7 @@
   {
     "id": "pressingTrigger",
     "name": "Pressing Trigger",
-    "file": "pressingtrigger_new.json",
+    "file": "pressingtrigger.json",
     "group": "Chapter 5: Reading a Match",
     "chapter": 5,
     "section": "Reading a Match",
