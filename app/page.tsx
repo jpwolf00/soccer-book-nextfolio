@@ -45,7 +45,7 @@ export default function Home() {
               <div className="rounded-2xl bg-gray-900 shadow-2xl overflow-hidden border-4 border-soccer-green-600 h-[500px] sm:h-[500px] lg:h-[500px]">
                 {/* Embedded Tactical Animation */}
                 <iframe 
-                  src="/tactics/index.html?id=accordionShape"
+                  src="/tactics/index.html?id=accordionshape"
                   className="w-full h-full border-0"
                   title="Interactive Tactical Animation Preview"
                   allow="autoplay"
