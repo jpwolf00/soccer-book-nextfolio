@@ -62,7 +62,7 @@
   {
     "id": "coordinatedPress",
     "name": "Coordinated Press",
-    "file": "coordinatedpress.json",
+    "file": "coordinatedPress.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -112,7 +112,7 @@
   {
     "id": "pressingTrigger",
     "name": "Pressing Trigger",
-    "file": "pressingtrigger.json",
+    "file": "pressingTrigger.json",
     "group": "Chapter 5: Reading a Match",
     "chapter": 5,
     "section": "Reading a Match",
