@@ -22,7 +22,7 @@
   {
     "id": "thirdManRun",
     "name": "Third-Man Run",
-    "file": "thirdmanrun.json",
+    "file": "thirdManRun.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
@@ -42,7 +42,7 @@
   {
     "id": "targetVsRunner",
     "name": "Target Man vs Channel Runner",
-    "file": "targetvsrunner.json",
+    "file": "targetVsRunner.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
