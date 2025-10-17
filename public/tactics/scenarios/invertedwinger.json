@@ -151,7 +151,40 @@
       "y": 360,
       "anchor": "middle",
       "start": 1600,
-      "end": 2500
+      "end": 2200
+    },
+    {
+      "type": "textLabel",
+      "text": "SHOT: Right-footed strike to far post",
+      "x": 820,
+      "y": 360,
+      "anchor": "middle",
+      "start": 2200,
+      "end": 3500
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 860, "y": 300},
+      "to": {"x": 980, "y": 250},
+      "color": "#ffeb3b",
+      "start": 2200,
+      "end": 2800
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 860, "y": 310},
+      "to": {"x": 980, "y": 250},
+      "start": 2200,
+      "end": 2800,
+      "easing": "quadOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "LW",
+      "radius": 32,
+      "start": 2200,
+      "end": 2800
     }
   ],
   "annotations": [
