@@ -500,7 +500,7 @@ export default function WatchPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              <strong>Disclaimer:</strong> Broadcast information changes frequently. While we strive to keep this page current, always verify match times and broadcast information with official league and broadcaster sources. Pricing and availability subject to change. We are not affiliated with any broadcaster, league, or streaming service mentioned on this page.
+              <strong>Disclaimer:</strong> Broadcast information changes frequently. While we strive to keep this page current, please always verify match times and broadcast information with official league and broadcaster sources. Pricing and availability subject to change. We are not affiliated with any broadcaster, league, or streaming service mentioned on this page.
             </p>
             <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
               Last updated: October 17, 2025
