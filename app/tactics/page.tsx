@@ -5,14 +5,14 @@ import { useState, Suspense } from 'react'
 
 const scenarios = {
   // Chapter 2: Shapes and Setups
-  'accordionShape': {
+  'accordionshape': {
     title: 'Accordion Animation',
     subtitle: 'Shape Breathing',
     chapter: 'Chapter 2: Shapes and Setups',
     description: 'Watch how a team shape transforms from compact defensive to spread attacking, then compresses back on turnover.',
     explanation: 'This animation demonstrates the "breathing" concept—how teams expand to create passing lanes when they have the ball, then compress to deny space when defending. Same 11 players, two different shapes.'
   },
-  'overloadCutback': {
+  'overloadcutback': {
     title: 'Overload to Cutback Goal',
     subtitle: 'Most Common Goal Pattern',
     chapter: 'Chapter 2: Shapes and Setups',
@@ -21,21 +21,21 @@ const scenarios = {
   },
   
   // Chapter 3: Who Does What
-  'thirdManRun': {
+  'thirdmanrun': {
     title: 'Third-Man Run',
     subtitle: 'Late Arrival',
     chapter: 'Chapter 3: Who Does What',
     description: 'A→B pass draws defenders, C arrives late unmarked into vacated space.',
     explanation: 'The "third man" creates a numerical advantage by arriving late. Player A passes to B, defenders shift to cover B, then Player C runs into the space they just vacated. This late run is harder to track and often goes unmarked.'
   },
-  'invertedWinger': {
+  'invertedwinger': {
     title: 'Inverted Winger',
     subtitle: 'Cutting Inside',
     chapter: 'Chapter 3: Who Does What',
     description: 'Right-footed player on left wing cuts inside onto stronger foot to create shooting angle.',
     explanation: 'An inverted winger plays on the opposite flank from their strong foot (right-footed on left wing). This allows them to cut inside and shoot or pass with their preferred foot, creating dangerous angles.'
   },
-  'targetVsRunner': {
+  'targetvsrunner': {
     title: 'Target Man vs Channel Runner',
     subtitle: 'Two Striker Styles',
     chapter: 'Chapter 3: Who Does What',
@@ -49,7 +49,7 @@ const scenarios = {
     description: 'False 9 drops deep, center-backs follow, space opens behind for wingers to exploit.',
     explanation: 'A false 9 is a striker who drops into midfield instead of staying up front. This creates a dilemma: if center-backs follow, they leave space behind for wingers. If they hold position, the false 9 is free in midfield.'
   },
-  'coordinatedPress': {
+  'coordinatedpress': {
     title: 'Coordinated Press',
     subtitle: 'Simultaneous Pressure',
     chapter: 'Chapter 3: Who Does What',
@@ -58,21 +58,21 @@ const scenarios = {
   },
   
   // Chapter 4: Offside
-  'onsideBeatsTrap': {
+  'onsidebeatstrap': {
     title: 'Beats the Trap',
     subtitle: 'Perfect Timing',
     chapter: 'Chapter 4: Offside',
     description: 'Attacker times run perfectly to stay onside as the defensive line steps up.',
     explanation: 'The striker holds position while the defense steps up, then times the run perfectly to be level with defenders when the ball is played. Perfect timing beats the offside trap.'
   },
-  'caughtOffside': {
+  'caughtoffside': {
     title: 'Caught by the Trap',
     subtitle: 'Offside',
     chapter: 'Chapter 4: Offside',
     description: 'Striker runs too early and is caught offside when the ball is played.',
     explanation: 'The attacker runs too early and is ahead of the defensive line when the pass is made. Poor timing results in an offside call—the trap works.'
   },
-  'timedRun': {
+  'timedrun': {
     title: 'Timed Run',
     subtitle: 'Beating Offside',
     chapter: 'Chapter 4: Offside',
@@ -88,7 +88,7 @@ const scenarios = {
     description: 'Team wins ball and has 5-second window to exploit disorganized defense.',
     explanation: 'When possession changes, there\'s a brief window where the defense is disorganized. Quick teams exploit this with rapid passes forward before the opposition can recover their shape. Window closes fast—defenders recover in about 5 seconds.'
   },
-  'pressingTrigger': {
+  'pressingtrigger': {
     title: 'Pressing Trigger',
     subtitle: 'Heavy Touch Activation',
     chapter: 'Chapter 5: Reading a Match',
@@ -99,10 +99,10 @@ const scenarios = {
 
 // Group scenarios by chapter for sidebar
 const scenariosByChapter = {
-  'Chapter 2: Shapes and Setups': ['accordionShape', 'overloadCutback'],
-  'Chapter 3: Who Does What': ['thirdManRun', 'invertedWinger', 'targetVsRunner', 'false9', 'coordinatedPress'],
-  'Chapter 4: Offside': ['onsideBeatsTrap', 'caughtOffside', 'timedRun'],
-  'Chapter 5: Reading a Match': ['transitions', 'pressingTrigger']
+  'Chapter 2: Shapes and Setups': ['accordionshape', 'overloadcutback'],
+  'Chapter 3: Who Does What': ['thirdmanrun', 'invertedwinger', 'targetvsrunner', 'false9', 'coordinatedpress'],
+  'Chapter 4: Offside': ['onsidebeatstrap', 'caughtoffside', 'timedrun'],
+  'Chapter 5: Reading a Match': ['transitions', 'pressingtrigger']
 }
 
 function TacticsContent() {
@@ -112,7 +112,7 @@ function TacticsContent() {
   const [selectedScenario, setSelectedScenario] = useState(
     scenarioParam && scenarios[scenarioParam as keyof typeof scenarios] 
       ? scenarioParam 
-      : 'accordionShape'
+      : 'accordionshape'
   )
 
   const currentScenario = scenarios[selectedScenario as keyof typeof scenarios]
