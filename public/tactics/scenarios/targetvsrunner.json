@@ -54,31 +54,31 @@
       "from": {"x": 410, "y": 325},
       "to": {"x": 670, "y": 325},
       "color": "#f87171",
-      "start": 0,
-      "end": 800
+      "start": 300,
+      "end": 1100
     },
     {
       "type": "passArc",
       "from": {"x": 400, "y": 325},
       "to": {"x": 680, "y": 325},
-      "start": 0,
-      "end": 800
+      "start": 300,
+      "end": 1100
     },
     {
       "type": "move",
       "id": "BALL",
       "from": {"x": 400, "y": 325},
       "to": {"x": 680, "y": 325},
-      "start": 0,
-      "end": 800,
+      "start": 300,
+      "end": 1100,
       "easing": "linear"
     },
     {
       "type": "spotlight",
       "id": "TM",
       "radius": 30,
-      "start": 800,
-      "end": 1600
+      "start": 1100,
+      "end": 1900
     },
     {
       "type": "textLabel",
@@ -86,16 +86,16 @@
       "x": 550,
       "y": 260,
       "anchor": "middle",
-      "start": 800,
-      "end": 2200
+      "start": 1100,
+      "end": 2500
     },
     {
       "type": "move",
       "id": "TM_DEF",
       "from": {"x": 750, "y": 325},
       "to": {"x": 695, "y": 325},
-      "start": 800,
-      "end": 1400,
+      "start": 1100,
+      "end": 1700,
       "easing": "quadOut"
     },
     {
@@ -103,16 +103,16 @@
       "from": {"x": 400, "y": 335},
       "to": {"x": 610, "y": 340},
       "color": "#60a5fa",
-      "start": 1400,
-      "end": 2400
+      "start": 1700,
+      "end": 2700
     },
     {
       "type": "move",
       "id": "TM_MID",
       "from": {"x": 400, "y": 325},
       "to": {"x": 620, "y": 345},
-      "start": 1400,
-      "end": 2400,
+      "start": 1700,
+      "end": 2700,
       "easing": "quadOut"
     },
     {
@@ -121,23 +121,23 @@
       "x": 550,
       "y": 390,
       "anchor": "middle",
-      "start": 2200,
-      "end": 3500
+      "start": 2500,
+      "end": 3800
     },
     {
       "type": "passArc",
       "from": {"x": 680, "y": 325},
       "to": {"x": 620, "y": 345},
-      "start": 2400,
-      "end": 3000
+      "start": 2700,
+      "end": 3300
     },
     {
       "type": "move",
       "id": "BALL",
       "from": {"x": 680, "y": 325},
       "to": {"x": 620, "y": 345},
-      "start": 2400,
-      "end": 3000,
+      "start": 2700,
+      "end": 3300,
       "easing": "linear"
     },
     {
@@ -146,16 +146,16 @@
       "x": 150,
       "y": 70,
       "anchor": "start",
-      "start": 3800,
-      "end": 7000
+      "start": 4100,
+      "end": 7300
     },
     {
       "type": "move",
       "id": "TM",
       "from": {"x": 680, "y": 325},
       "to": {"x": 680, "y": 325},
-      "start": 3500,
-      "end": 3800,
+      "start": 3800,
+      "end": 4100,
       "easing": "linear"
     },
     {
@@ -163,8 +163,8 @@
       "id": "TM_MID",
       "from": {"x": 620, "y": 345},
       "to": {"x": 400, "y": 325},
-      "start": 3500,
-      "end": 3800,
+      "start": 3800,
+      "end": 4100,
       "easing": "linear"
     },
     {
@@ -172,8 +172,8 @@
       "id": "TM_DEF",
       "from": {"x": 695, "y": 325},
       "to": {"x": 750, "y": 325},
-      "start": 3500,
-      "end": 3800,
+      "start": 3800,
+      "end": 4100,
       "easing": "linear"
     },
     {
@@ -181,8 +181,8 @@
       "id": "BALL",
       "from": {"x": 620, "y": 345},
       "to": {"x": 400, "y": 325},
-      "start": 3500,
-      "end": 3800,
+      "start": 3800,
+      "end": 4100,
       "easing": "linear"
     },
     {
@@ -190,23 +190,23 @@
       "from": {"x": 410, "y": 325},
       "to": {"x": 840, "y": 325},
       "color": "#ffeb3b",
-      "start": 3800,
-      "end": 4600
+      "start": 4400,
+      "end": 5200
     },
     {
       "type": "passArc",
       "from": {"x": 400, "y": 325},
       "to": {"x": 850, "y": 325},
-      "start": 3800,
-      "end": 4600
+      "start": 4400,
+      "end": 5200
     },
     {
       "type": "move",
       "id": "BALL",
       "from": {"x": 400, "y": 325},
       "to": {"x": 850, "y": 325},
-      "start": 3800,
-      "end": 4600,
+      "start": 4400,
+      "end": 5200,
       "easing": "linear"
     },
     {
@@ -214,24 +214,24 @@
       "from": {"x": 680, "y": 325},
       "to": {"x": 840, "y": 325},
       "color": "#f87171",
-      "start": 3800,
-      "end": 5200
+      "start": 4400,
+      "end": 5800
     },
     {
       "type": "move",
       "id": "TM",
       "from": {"x": 680, "y": 325},
       "to": {"x": 850, "y": 325},
-      "start": 3800,
-      "end": 5200,
+      "start": 4400,
+      "end": 5800,
       "easing": "quadInOut"
     },
     {
       "type": "spotlight",
       "id": "TM",
       "radius": 30,
-      "start": 4600,
-      "end": 5400
+      "start": 5200,
+      "end": 6000
     },
     {
       "type": "textLabel",
@@ -239,24 +239,24 @@
       "x": 700,
       "y": 260,
       "anchor": "middle",
-      "start": 4400,
-      "end": 6000
+      "start": 5000,
+      "end": 6600
     },
     {
       "type": "arrow",
       "from": {"x": 750, "y": 335},
       "to": {"x": 830, "y": 335},
       "color": "#60a5fa",
-      "start": 4000,
-      "end": 5200
+      "start": 4600,
+      "end": 5800
     },
     {
       "type": "move",
       "id": "TM_DEF",
       "from": {"x": 750, "y": 325},
       "to": {"x": 830, "y": 325},
-      "start": 4000,
-      "end": 5200,
+      "start": 4600,
+      "end": 5800,
       "easing": "quadOut"
     },
     {
@@ -265,8 +265,8 @@
       "x": 750,
       "y": 380,
       "anchor": "middle",
-      "start": 5200,
-      "end": 6500
+      "start": 5800,
+      "end": 7100
     }
   ],
   "annotations": [
