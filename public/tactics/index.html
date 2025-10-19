@@ -176,7 +176,8 @@ const FALLBACK_MANIFEST = [
 
 async function loadManifest() {
   try {
-    const response = await fetch(`scenarios/manifest.json`);
+    const cacheBuster = Date.now();
+    const response = await fetch(`scenarios/manifest.json?v=${cacheBuster}`);
     if (!response.ok) throw new Error('Manifest not found');
     const data = await response.json();
     console.log('Loaded manifest:', data);
@@ -188,23 +189,15 @@ async function loadManifest() {
   }
 }
 
-async function loadScenarioById(id, manifest) {
+async function loadScenarioById(id) {
   if (FALLBACK_SCENARIOS[id]) {
     console.log('Using fallback scenario:', id);
     return FALLBACK_SCENARIOS[id];
   }
   
   try {
-    // Find the file path from manifest (includes version parameter)
-    let filePath = `${id}.json`;
-    if (manifest && Array.isArray(manifest)) {
-      const scenarioEntry = manifest.find(s => s.id === id);
-      if (scenarioEntry && scenarioEntry.file) {
-        filePath = scenarioEntry.file;
-      }
-    }
-    
-    const response = await fetch(`scenarios/${filePath}`);
+    const cacheBuster = Date.now();
+    const response = await fetch(`scenarios/${id}.json?v=${cacheBuster}`);
     if (!response.ok) throw new Error(`Scenario ${id} not found`);
     return await response.json();
   } catch (error) {
@@ -537,8 +530,7 @@ async function initScenario(scn){
 async function loadAndInitScenario(id) {
   try {
     pause();
-    const manifest = await loadManifest();
-    const scenario = await loadScenarioById(id, manifest);
+    const scenario = await loadScenarioById(id);
     await initScenario(scenario);
   } catch (error) {
     console.error('Error loading scenario:', error);
