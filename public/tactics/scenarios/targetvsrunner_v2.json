@@ -1,0 +1,280 @@
+{
+  "id": "targetVsRunner",
+  "name": "Target Man vs Channel Runner",
+  "chapter": 3,
+  "section": "Roles",
+  "description": "Split-screen comparison: target man holding up play vs. channel runner sprinting behind defense",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "TM",
+      "x": 680,
+      "y": 325,
+      "color": "#f87171",
+      "label": "9"
+    },
+    {
+      "id": "TM_MID",
+      "x": 400,
+      "y": 325,
+      "color": "#f87171",
+      "label": "10"
+    },
+    {
+      "id": "TM_DEF",
+      "x": 750,
+      "y": 325,
+      "color": "#60a5fa",
+      "label": "5"
+    },
+    {
+      "id": "BALL",
+      "x": 400,
+      "y": 325,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "textLabel",
+      "text": "TARGET MAN: Holds up, brings others in",
+      "x": 150,
+      "y": 70,
+      "anchor": "start",
+      "start": 0,
+      "end": 3500
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 410, "y": 325},
+      "to": {"x": 670, "y": 325},
+      "color": "#f87171",
+      "start": 300,
+      "end": 1100
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 680, "y": 325},
+      "start": 300,
+      "end": 1100
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 680, "y": 325},
+      "start": 300,
+      "end": 1100,
+      "easing": "linear"
+    },
+    {
+      "type": "spotlight",
+      "id": "TM",
+      "radius": 30,
+      "start": 1100,
+      "end": 1900
+    },
+    {
+      "type": "textLabel",
+      "text": "Shields ball with body, waits for support",
+      "x": 550,
+      "y": 260,
+      "anchor": "middle",
+      "start": 1100,
+      "end": 2500
+    },
+    {
+      "type": "move",
+      "id": "TM_DEF",
+      "from": {"x": 750, "y": 325},
+      "to": {"x": 695, "y": 325},
+      "start": 1100,
+      "end": 1700,
+      "easing": "quadOut"
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 400, "y": 335},
+      "to": {"x": 610, "y": 340},
+      "color": "#60a5fa",
+      "start": 1700,
+      "end": 2700
+    },
+    {
+      "type": "move",
+      "id": "TM_MID",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 620, "y": 345},
+      "start": 1700,
+      "end": 2700,
+      "easing": "quadOut"
+    },
+    {
+      "type": "textLabel",
+      "text": "Lays off to supporting midfielder",
+      "x": 550,
+      "y": 390,
+      "anchor": "middle",
+      "start": 2500,
+      "end": 3800
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 620, "y": 345},
+      "start": 2700,
+      "end": 3300
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 620, "y": 345},
+      "start": 2700,
+      "end": 3300,
+      "easing": "linear"
+    },
+    {
+      "type": "textLabel",
+      "text": "CHANNEL RUNNER: Sprints behind defense",
+      "x": 150,
+      "y": 70,
+      "anchor": "start",
+      "start": 4100,
+      "end": 7300
+    },
+    {
+      "type": "move",
+      "id": "TM",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 680, "y": 325},
+      "start": 3800,
+      "end": 4100,
+      "easing": "linear"
+    },
+    {
+      "type": "move",
+      "id": "TM_MID",
+      "from": {"x": 620, "y": 345},
+      "to": {"x": 400, "y": 325},
+      "start": 3800,
+      "end": 4100,
+      "easing": "linear"
+    },
+    {
+      "type": "move",
+      "id": "TM_DEF",
+      "from": {"x": 695, "y": 325},
+      "to": {"x": 750, "y": 325},
+      "start": 3800,
+      "end": 4100,
+      "easing": "linear"
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 620, "y": 345},
+      "to": {"x": 400, "y": 325},
+      "start": 3800,
+      "end": 4100,
+      "easing": "linear"
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 410, "y": 325},
+      "to": {"x": 840, "y": 325},
+      "color": "#ffeb3b",
+      "start": 4400,
+      "end": 5200
+    },
+    {
+      "type": "passArc",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 850, "y": 325},
+      "start": 4400,
+      "end": 5200
+    },
+    {
+      "type": "move",
+      "id": "BALL",
+      "from": {"x": 400, "y": 325},
+      "to": {"x": 850, "y": 325},
+      "start": 4400,
+      "end": 5200,
+      "easing": "linear"
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 840, "y": 325},
+      "color": "#f87171",
+      "start": 4400,
+      "end": 5800
+    },
+    {
+      "type": "move",
+      "id": "TM",
+      "from": {"x": 680, "y": 325},
+      "to": {"x": 850, "y": 325},
+      "start": 4400,
+      "end": 5800,
+      "easing": "quadInOut"
+    },
+    {
+      "type": "spotlight",
+      "id": "TM",
+      "radius": 30,
+      "start": 5200,
+      "end": 6000
+    },
+    {
+      "type": "textLabel",
+      "text": "Explosive sprint: times run perfectly",
+      "x": 700,
+      "y": 260,
+      "anchor": "middle",
+      "start": 5000,
+      "end": 6600
+    },
+    {
+      "type": "arrow",
+      "from": {"x": 750, "y": 335},
+      "to": {"x": 830, "y": 335},
+      "color": "#60a5fa",
+      "start": 4600,
+      "end": 5800
+    },
+    {
+      "type": "move",
+      "id": "TM_DEF",
+      "from": {"x": 750, "y": 325},
+      "to": {"x": 830, "y": 325},
+      "start": 4600,
+      "end": 5800,
+      "easing": "quadOut"
+    },
+    {
+      "type": "textLabel",
+      "text": "Defender chasing but beaten by pace",
+      "x": 750,
+      "y": 380,
+      "anchor": "middle",
+      "start": 5800,
+      "end": 7100
+    }
+  ],
+  "annotations": [
+    {
+      "text": "Two striker styles: physical hold-up vs. pace in behind",
+      "x": 500,
+      "y": 620,
+      "anchor": "middle"
+    }
+  ]
+}
