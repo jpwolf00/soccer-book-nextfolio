@@ -174,6 +174,9 @@ const FALLBACK_MANIFEST = [
   {id: "caughtOffside", name: "Caught by the Trap (Offside)", group: "Offside Mechanics", chapter: 4, section: "The Offside Trap"}
 ];
 
+// Global variable to store manifest
+let CACHED_MANIFEST = null;
+
 async function loadManifest() {
   try {
     const cacheBuster = Date.now();
@@ -182,6 +185,7 @@ async function loadManifest() {
     const data = await response.json();
     console.log('Loaded manifest:', data);
     console.log('Is array?', Array.isArray(data));
+    CACHED_MANIFEST = data; // Cache it globally
     return data;
   } catch (error) {
     console.warn('Could not load manifest.json, using fallback scenarios:', error);
@@ -196,8 +200,24 @@ async function loadScenarioById(id) {
   }
   
   try {
-    const cacheBuster = Date.now();
-    const response = await fetch(`scenarios/${id}.json?v=${cacheBuster}`);
+    // Load manifest if not already loaded
+    if (!CACHED_MANIFEST) {
+      CACHED_MANIFEST = await loadManifest();
+    }
+    
+    // Find the file path from manifest
+    let filePath = `${id}.json`;
+    if (CACHED_MANIFEST && Array.isArray(CACHED_MANIFEST)) {
+      const scenarioEntry = CACHED_MANIFEST.find(s => s.id === id);
+      if (scenarioEntry && scenarioEntry.file) {
+        filePath = scenarioEntry.file;
+        console.log(`Loading scenario from manifest: ${filePath}`);
+      } else {
+        console.warn(`Scenario ${id} not found in manifest, trying default path`);
+      }
+    }
+    
+    const response = await fetch(`scenarios/${filePath}`);
     if (!response.ok) throw new Error(`Scenario ${id} not found`);
     return await response.json();
   } catch (error) {
