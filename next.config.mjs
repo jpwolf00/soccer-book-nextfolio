@@ -6,7 +6,7 @@ const nextConfig = {
 }
 
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
+  // Add markdown plugins here, as desired.  Rebuild
 })
 
 export default withMDX(nextConfig)
