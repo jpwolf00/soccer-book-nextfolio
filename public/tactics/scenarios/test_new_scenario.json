@@ -1,0 +1,30 @@
+{
+  "id": "testNewScenario",
+  "name": "TEST - This is a brand new file",
+  "chapter": 3,
+  "section": "Test",
+  "description": "Testing if new files deploy correctly",
+  "pitch": {
+    "width": 1000,
+    "height": 650
+  },
+  "players": [
+    {
+      "id": "BALL",
+      "x": 500,
+      "y": 325,
+      "color": "#fff",
+      "r": 8,
+      "label": ""
+    }
+  ],
+  "actions": [],
+  "annotations": [
+    {
+      "text": "If you can see this, new files work!",
+      "x": 500,
+      "y": 100,
+      "anchor": "middle"
+    }
+  ]
+}

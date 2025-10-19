@@ -10,6 +10,16 @@
     "description": "Formation expanding/compressing in real time"
   },
   {
+    "id": "testNewScenario",
+    "name": "TEST - New File",
+    "file": "test_new_scenario.json",
+    "group": "TEST",
+    "chapter": 1,
+    "section": "Test",
+    "slug": "test",
+    "description": "Testing new file deployment"
+  },
+  {
     "id": "overloadCutback",
     "name": "Overload to Cutback Goal",
     "file": "overloadcutback.json",
@@ -42,7 +52,7 @@
   {
     "id": "targetVsRunner",
     "name": "Target Man vs Channel Runner",
-    "file": "targetvsrunner_v2.json",
+    "file": "targetvsrunner.json",
     "group": "Chapter 3: Who Does What",
     "chapter": 3,
     "section": "Roles",
