@@ -3,7 +3,7 @@
   "name": "Target Man vs Channel Runner",
   "chapter": 3,
   "section": "Roles",
-  "description": "Split-screen comparison: target man holding up play vs. channel runner sprinting behind defense v3",
+  "description": "Split-screen comparison: target man holding up play vs. channel runner sprinting behind defense",
   "pitch": {
     "width": 1000,
     "height": 650
@@ -19,9 +19,16 @@
     {
       "id": "TM_MID",
       "x": 400,
-      "y": 105,
+      "y": 325,
       "color": "#f87171",
       "label": "10"
+    },
+    {
+      "id": "TM_SUPPORT",
+      "x": 400,
+      "y": 325,
+      "color": "#fbbf24",
+      "label": "8"
     },
     {
       "id": "TM_DEF",
@@ -33,7 +40,7 @@
     {
       "id": "BALL",
       "x": 400,
-      "y": 225,
+      "y": 325,
       "color": "#fff",
       "r": 8,
       "label": ""
@@ -42,7 +49,7 @@
   "actions": [
     {
       "type": "textLabel",
-      "text": "TARGET MAN: Holds up, brings others into the frame",
+      "text": "TARGET MAN: Holds up, brings others in",
       "x": 150,
       "y": 70,
       "anchor": "start",
