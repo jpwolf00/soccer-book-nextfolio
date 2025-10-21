@@ -19,7 +19,7 @@
     {
       "id": "TM_MID",
       "x": 400,
-      "y": 325,
+      "y": 105,
       "color": "#f87171",
       "label": "10"
     },
@@ -33,7 +33,7 @@
     {
       "id": "BALL",
       "x": 400,
-      "y": 325,
+      "y": 225,
       "color": "#fff",
       "r": 8,
       "label": ""
@@ -42,7 +42,7 @@
   "actions": [
     {
       "type": "textLabel",
-      "text": "TARGET MAN: Holds up, brings others in",
+      "text": "TARGET MAN: Holds up, brings others into the frame",
       "x": 150,
       "y": 70,
       "anchor": "start",
