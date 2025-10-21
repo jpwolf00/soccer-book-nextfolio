@@ -24,13 +24,6 @@
       "label": "10"
     },
     {
-      "id": "TM_SUPPORT",
-      "x": 400,
-      "y": 325,
-      "color": "#fbbf24",
-      "label": "8"
-    },
-    {
       "id": "TM_DEF",
       "x": 750,
       "y": 325,
